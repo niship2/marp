@@ -6,7 +6,7 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-# 4. プログラミングを活用した知財業務の自動化とフロー構築
+## 4. プログラミングを活用した知財業務の自動化とフロー構築
 
 ---
 
@@ -21,7 +21,11 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 - **デバッグ**: エラーの特定と修正が困難
 - **保守**: コードの更新・改善が継続的に必要
 
-**生成 AI による解決**
+---
+
+## 4-1. プログラミング不要？生成 AI にコードを書かせる時代（ 1）
+
+#### 生成 AI による解決
 
 - **自然言語での指示**: 日本語でコード生成を指示
 - **自動デバッグ**: AI がエラーを特定・修正
@@ -30,7 +34,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ---
 
-## 4-1. プログラミング不要？生成 AI にコードを書かせる時代（続き）
+## 4-1. プログラミング不要？生成 AI にコードを書かせる時代（ 2）
 
 #### 生成 AI によるコード生成の基本
 
@@ -44,7 +48,11 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 5. テスト・実行
 ```
 
-**実践例**
+---
+
+## 4-1. プログラミング不要？生成 AI にコードを書かせる時代（ 3）
+
+#### 実践例
 
 ```
 「特許文献の一括処理を行うPythonスクリプトを作成してください。
@@ -55,6 +63,10 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 - 結果のCSV出力」
 ```
 
+---
+
+## 4-1. プログラミング不要？生成 AI にコードを書かせる時代（ 4）
+
 #### 生成 AI の利点
 
 **開発効率の向上**
@@ -64,12 +76,162 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 - **学習効果**: コードを通じた学習
 - **保守性**: 理解しやすい構造化されたコード
 
-**知財業務での活用**
+---
+
+## 4-1. プログラミング不要？生成 AI にコードを書かせる時代（ 5）
+
+#### 知財業務での活用
 
 - **自動化の実現**: 定型業務の完全自動化
 - **カスタマイズ**: 業務に特化したシステム構築
 - **統合化**: 複数システムの連携
 - **スケーラビリティ**: 業務量増加への対応
+
+---
+
+## 4-1-2. ノーコードでの開発の 2 つのアプローチ
+
+#### ノーコード開発の基本概念
+
+**ノーコード開発とは**
+
+プログラミング言語を直接書かずに、アプリケーションやシステムを構築する手法
+
+**2 つの主要アプローチ**
+
+1. **LLM に言葉でコードを書いてもらうパターン**
+2. **既存のノーコードツールを利用する方法**
+
+---
+
+## 4-1-2. ノーコードでの開発の 2 つのアプローチ（ 1）
+
+#### アプローチ 1: LLM に言葉でコードを書いてもらうパターン
+
+**特徴**
+
+- **自然言語での指示**: 日本語で要件を説明
+- **コード生成**: AI が自動的にコードを生成
+- **カスタマイズ性**: 完全にオリジナルのコード
+- **学習効果**: コードの理解と改善が可能
+
+**利点**
+
+- 市販品と比べてスタマイズ性が高い（but 複雑になりがち）
+- 複雑なビジネスロジックの実装
+- セキュリティ要件への対応
+
+---
+
+## 4-1-2. ノーコードでの開発の 2 つのアプローチ（ 2）
+
+#### アプローチ 1 の実践例
+
+**指示例**
+
+```
+「特許文献の一括処理を行うPythonスクリプトを作成してください。
+以下の機能が必要です：
+- PDFファイルの読み込み
+- テキスト抽出
+- キーワード検索
+- 結果のCSV出力
+- エラーハンドリング機能
+- ログ出力機能」
+```
+
+**生成されるもの**
+
+- 完全に動作する Python スクリプト
+- 必要なライブラリのリスト
+- 使用方法の説明
+- エラーハンドリング機能
+
+---
+
+## 4-1-2. ノーコードでの開発の 2 つのアプローチ（ 3）
+
+#### アプローチ 2: 既存のノーコードツールを利用する方法
+
+**特徴**
+
+- **ビジュアル開発**: ドラッグ&ドロップで機能を組み合わせ
+- **テンプレート活用**: 既存のテンプレートをカスタマイズ
+- **迅速開発**: 数時間で本格的なアプリケーション構築
+- **保守性**: ツール側でのアップデートとメンテナンス
+
+**利点**
+
+- 開発時間の大幅短縮（but 深く考えずに作っちゃう）
+- 専門知識不要（but 痒いところに手が届かない）
+- 豊富なテンプレートと機能
+
+---
+
+## 4-1-2. ノーコードでの開発の 2 つのアプローチ（ 4）
+
+#### アプローチ 2 の実践例
+
+**利用可能なツール例**
+
+- **Dify**: AI アプリケーション構築プラットフォーム
+- **n8n**: ワークフロー自動化ツール
+- **FlowiseAI**: LangChain ベースの AI アプリケーション構築
+- **Zapier**: アプリケーション連携ツール
+- **Bubble**: Web アプリケーション構築ツール
+
+---
+
+## 4-1-2. ノーコードでの開発の 2 つのアプローチ（ 4）
+
+#### アプローチ 2 の実践例
+
+**構築例**
+
+```
+1. Difyで特許調査アシスタントを構築
+2. n8nで特許データ収集ワークフローを作成
+3. FlowiseAIで特許文献検索システムを構築
+```
+
+---
+
+## 4-1-2. ノーコードでの開発の 2 つのアプローチ（ 5）
+
+#### 2 つのアプローチの比較
+
+| 項目                 | LLM コード生成 | ノーコードツール |
+| -------------------- | -------------- | ---------------- |
+| **開発速度**         | 中〜高         | 高               |
+| **カスタマイズ性**   | 高             | 中               |
+| **学習コスト**       | 低             | 低               |
+| **保守性**           | 中             | 高               |
+| **セキュリティ**     | 高             | 中               |
+| **スケーラビリティ** | 高             | 中               |
+
+---
+
+## 4-1-2. ノーコードでの開発の 2 つのアプローチ（ 6）
+
+#### 選択の指針
+
+**LLM コード生成を選ぶ場合**
+
+- 完全にカスタマイズされたソリューションが必要
+- 既存システムとの高度な統合が必要
+- 複雑なビジネスロジックの実装が必要
+- セキュリティ要件が厳しい
+
+---
+
+## 4-1-2. ノーコードでの開発の 2 つのアプローチ（ 7）
+
+**ノーコードツールを選ぶ場合**
+
+- 迅速な開発が必要
+- 標準的な機能で十分
+- 保守性を重視
+- チーム全体での利用を想定
 
 ---
 
@@ -83,6 +245,12 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 **入力**
 PDF ファイル（特許明細書）
 
+---
+
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（ 1）
+
+#### 出力・処理内容
+
 **出力**
 CSV ファイル（分析結果）
 
@@ -93,12 +261,22 @@ CSV ファイル（分析結果）
 3. 重要度の評価
 4. 結果の整理・出力
 
+---
+
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（ 2）
+
 #### 生成 AI への指示
 
 <role>
 あなたはPython開発の専門家で、特許文献処理システムの開発に精通しています。
 効率的で保守性の高いコード作成と、エラーハンドリングの実装を得意としています。
 </role>
+
+---
+
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（ 3）
+
+#### コンテキスト・タスク設定
 
 <context>
 特許文献の一括処理システムを開発する必要があります。
@@ -116,6 +294,12 @@ CSV ファイル（分析結果）
 - 重要度スコアの計算
 - CSV 形式での結果出力
 
+---
+
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（ 4）
+
+#### 技術要件・開発手順
+
 技術要件：
 
 - Python 3.8 以上
@@ -123,16 +307,22 @@ CSV ファイル（分析結果）
 - ログ出力機能
 - 設定ファイル対応
 
+---
+
 以下の手順で段階的に開発してください：
 
 1. まず、基本的な PDF 読み込み機能を実装
 2. 次に、テキスト抽出機能を追加
 3. そして、分析機能を実装
 4. 最後に、出力機能とエラーハンドリングを追加
-   </task>
+
+---
+
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（5）
+
+#### 出力形式・制約
 
 <output_format>
-出力形式：
 
 - モジュラー設計
 - 設定可能なパラメータ
@@ -151,9 +341,9 @@ CSV ファイル（分析結果）
 
 ---
 
-## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（続き）
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（ 6）
 
-#### 生成されたコード例
+#### 生成されたコード例 - インポート・クラス定義
 
 ```python
 import os
@@ -168,7 +358,15 @@ class PatentDocumentProcessor:
         """特許文献処理クラスの初期化"""
         self.config = self.load_config(config_file)
         self.setup_logging()
+```
 
+---
+
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（ 7）
+
+#### 設定・ログ機能
+
+```python
     def load_config(self, config_file: str) -> Dict:
         """設定ファイルの読み込み"""
         try:
@@ -185,18 +383,15 @@ class PatentDocumentProcessor:
             "keywords": ["AI", "機械学習", "特許", "技術"],
             "min_score": 0.5
         }
+```
 
-    def setup_logging(self):
-        """ログ設定"""
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s',
-            handlers=[
-                logging.FileHandler('patent_processing.log'),
-                logging.StreamHandler()
-            ]
-        )
+---
 
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（ 8）
+
+#### PDF 処理・分析機能
+
+```python
     def extract_text_from_pdf(self, pdf_path: str) -> str:
         """PDFからテキストを抽出"""
         try:
@@ -209,6 +404,11 @@ class PatentDocumentProcessor:
             logging.error(f"PDF読み込みエラー {pdf_path}: {e}")
             return ""
 
+```
+
+---
+
+```python
     def analyze_patent_content(self, text: str) -> Dict:
         """特許内容の分析"""
         analysis_result = {
@@ -216,19 +416,15 @@ class PatentDocumentProcessor:
             "keyword_matches": {},
             "importance_score": 0.0
         }
+```
 
-        # キーワードマッチング
-        for keyword in self.config["keywords"]:
-            count = text.lower().count(keyword.lower())
-            if count > 0:
-                analysis_result["keyword_matches"][keyword] = count
+---
 
-        # 重要度スコアの計算
-        total_matches = sum(analysis_result["keyword_matches"].values())
-        analysis_result["importance_score"] = min(1.0, total_matches / 100)
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（ 9）
 
-        return analysis_result
+#### メイン処理・結果保存
 
+```python
     def process_all_documents(self) -> pd.DataFrame:
         """全ドキュメントの処理"""
         results = []
@@ -256,16 +452,15 @@ class PatentDocumentProcessor:
                 results.append(result)
 
         return pd.DataFrame(results)
+```
 
-    def save_results(self, df: pd.DataFrame):
-        """結果の保存"""
-        output_path = os.path.join(
-            self.config["output_directory"],
-            "patent_analysis_results.csv"
-        )
-        df.to_csv(output_path, index=False, encoding='utf-8')
-        logging.info(f"結果を保存: {output_path}")
+---
 
+## 4-2. 知財業務での自動化事例 - 事例 1: 特許文献の一括処理（ 10）
+
+#### 使用例
+
+```python
 # 使用例
 if __name__ == "__main__":
     processor = PatentDocumentProcessor()
@@ -285,6 +480,12 @@ if __name__ == "__main__":
 **入力**
 検索キーワード、検索期間
 
+---
+
+## 4-3. 事例 2: 特許検索の自動化（ 1）
+
+#### 出力・処理内容
+
 **出力**
 新規特許のリスト、重要度評価
 
@@ -302,6 +503,12 @@ if __name__ == "__main__":
 効率的な検索システムと自動化フローの構築を得意としています。
 </role>
 
+---
+
+## 4-3. 事例 2: 特許検索の自動化（ 2）
+
+#### コンテキスト・タスク設定
+
 <context>
 特許検索の自動化システムを開発する必要があります。
 定期的な検索実行と新規特許の監視を自動化するシステムが求められています。
@@ -318,6 +525,12 @@ if __name__ == "__main__":
 - 重要度の自動評価
 - 結果の自動通知
 
+---
+
+## 4-3. 事例 2: 特許検索の自動化（ 3）
+
+#### 技術要件・開発手順
+
 技術要件：
 
 - Python 3.8 以上
@@ -326,13 +539,20 @@ if __name__ == "__main__":
 - データベース連携
 - 通知機能
 
+---
+
 以下の手順で段階的に開発してください：
 
 1. まず、API 連携機能を実装
 2. 次に、検索機能を実装
 3. そして、自動化機能を追加
 4. 最後に、通知機能を実装
-   </task>
+
+---
+
+## 4-3. 事例 2: 特許検索の自動化（ 4）
+
+#### 出力形式・制約
 
 <output_format>
 出力形式：
@@ -354,9 +574,9 @@ if __name__ == "__main__":
 
 ---
 
-## 4-3. 事例 2: 特許検索の自動化（続き）
+## 4-3. 事例 2: 特許検索の自動化（ 5）
 
-#### 生成されたコード例
+#### 生成されたコード例 - インポート・クラス定義
 
 ```python
 import requests
@@ -374,7 +594,15 @@ class PatentSearchAutomation:
         self.config = self.load_config(config_file)
         self.setup_logging()
         self.setup_database()
+```
 
+---
+
+## 4-3. 事例 2: 特許検索の自動化（ 6）
+
+#### 設定・データベース機能
+
+```python
     def load_config(self, config_file: str) -> Dict:
         """設定ファイルの読み込み"""
         try:
@@ -392,37 +620,15 @@ class PatentSearchAutomation:
             "search_interval_hours": 24,
             "database_path": "patent_search.db"
         }
+```
 
-    def setup_logging(self):
-        """ログ設定"""
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s',
-            handlers=[
-                logging.FileHandler('patent_search.log'),
-                logging.StreamHandler()
-            ]
-        )
+---
 
-    def setup_database(self):
-        """データベースの初期化"""
-        self.conn = sqlite3.connect(self.config["database_path"])
-        cursor = self.conn.cursor()
+## 4-3. 事例 2: 特許検索の自動化（ 7）
 
-        # 特許情報テーブルの作成
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS patents (
-                id TEXT PRIMARY KEY,
-                title TEXT,
-                abstract TEXT,
-                filing_date TEXT,
-                importance_score REAL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
+#### 検索・重要度評価機能
 
-        self.conn.commit()
-
+```python
     def search_patents(self, keyword: str) -> List[Dict]:
         """特許検索の実行"""
         try:
@@ -452,46 +658,15 @@ class PatentSearchAutomation:
         except Exception as e:
             logging.error(f"検索エラー: {e}")
             return []
+```
 
-    def calculate_importance_score(self, patent: Dict) -> float:
-        """重要度スコアの計算"""
-        score = 0.0
+---
 
-        # タイトルの重要度
-        title = patent.get("title", "").lower()
-        for keyword in self.config["search_keywords"]:
-            if keyword.lower() in title:
-                score += 0.3
+## 4-3. 事例 2: 特許検索の自動化（ 8）
 
-        # 要約の重要度
-        abstract = patent.get("abstract", "").lower()
-        for keyword in self.config["search_keywords"]:
-            score += abstract.count(keyword.lower()) * 0.1
+#### 自動化・スケジューラー機能
 
-        return min(1.0, score)
-
-    def save_patent(self, patent: Dict, importance_score: float):
-        """特許情報の保存"""
-        cursor = self.conn.cursor()
-
-        try:
-            cursor.execute('''
-                INSERT OR IGNORE INTO patents
-                (id, title, abstract, filing_date, importance_score)
-                VALUES (?, ?, ?, ?, ?)
-            ''', (
-                patent.get("id"),
-                patent.get("title"),
-                patent.get("abstract"),
-                patent.get("filing_date"),
-                importance_score
-            ))
-
-            self.conn.commit()
-
-        except Exception as e:
-            logging.error(f"データベース保存エラー: {e}")
-
+```python
     def automated_search(self):
         """自動検索の実行"""
         logging.info("自動検索を開始")
@@ -517,7 +692,15 @@ class PatentSearchAutomation:
         while True:
             schedule.run_pending()
             time.sleep(60)
+```
 
+---
+
+## 4-3. 事例 2: 特許検索の自動化（ 9）
+
+#### 使用例
+
+```python
 # 使用例
 if __name__ == "__main__":
     automation = PatentSearchAutomation()
@@ -536,6 +719,12 @@ if __name__ == "__main__":
 **入力**
 発明の概要、技術仕様
 
+---
+
+## 4-4. 事例 3: 明細書作成支援システム（ 1）
+
+#### 出力・処理内容
+
 **出力**
 明細書ドラフト、品質チェック結果
 
@@ -546,12 +735,20 @@ if __name__ == "__main__":
 3. 各セクションの自動作成
 4. 品質チェックの実行
 
+---
+
 #### 生成 AI への指示
 
 <role>
 あなたは明細書作成支援システム開発の専門家で、特許法と自然言語処理に精通しています。
 効率的な明細書作成と品質管理システムの構築を得意としています。
 </role>
+
+---
+
+## 4-4. 事例 3: 明細書作成支援システム（ 2）
+
+#### コンテキスト・タスク設定
 
 <context>
 明細書作成支援システムを開発する必要があります。
@@ -569,6 +766,12 @@ if __name__ == "__main__":
 - 品質チェック機能
 - 修正提案機能
 
+---
+
+## 4-4. 事例 3: 明細書作成支援システム（ 3）
+
+#### 技術要件・開発手順
+
 技術要件：
 
 - Python 3.8 以上
@@ -583,7 +786,12 @@ if __name__ == "__main__":
 2. 次に、テンプレート機能を実装
 3. そして、自動生成機能を追加
 4. 最後に、品質チェック機能を実装
-   </task>
+
+---
+
+## 4-4. 事例 3: 明細書作成支援システム（ 4）
+
+#### 出力形式・制約
 
 <output_format>
 出力形式：
@@ -604,9 +812,9 @@ if __name__ == "__main__":
 
 ---
 
-## 4-4. 事例 3: 明細書作成支援システム（続き）
+## 4-4. 事例 3: 明細書作成支援システム（ 5）
 
-#### 生成されたコード例
+#### 生成されたコード例 - インポート・クラス定義
 
 ```python
 import re
@@ -621,7 +829,15 @@ class PatentSpecificationGenerator:
         self.config = self.load_config(config_file)
         self.setup_logging()
         self.load_templates()
+```
 
+---
+
+## 4-4. 事例 3: 明細書作成支援システム（ 6）
+
+#### 設定・テンプレート機能
+
+```python
     def load_config(self, config_file: str) -> Dict:
         """設定ファイルの読み込み"""
         try:
@@ -641,41 +857,15 @@ class PatentSpecificationGenerator:
                 "summary", "detailed_description", "claims"
             ]
         }
+```
 
-    def setup_logging(self):
-        """ログ設定"""
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s',
-            handlers=[
-                logging.FileHandler('specification_generation.log'),
-                logging.StreamHandler()
-            ]
-        )
+---
 
-    def load_templates(self):
-        """テンプレートの読み込み"""
-        self.templates = {}
-        for section in self.config["required_sections"]:
-            template_path = f"{self.config['templates_directory']}/{section}.txt"
-            try:
-                with open(template_path, 'r', encoding='utf-8') as f:
-                    self.templates[section] = f.read()
-            except FileNotFoundError:
-                self.templates[section] = self.get_default_template(section)
+## 4-4. 事例 3: 明細書作成支援システム（ 7）
 
-    def get_default_template(self, section: str) -> str:
-        """デフォルトテンプレートの取得"""
-        templates = {
-            "title": "【発明の名称】\n{title}\n",
-            "technical_field": "【技術分野】\n{technical_field}\n",
-            "background_art": "【背景技術】\n{background_art}\n",
-            "summary": "【発明の概要】\n{summary}\n",
-            "detailed_description": "【発明の詳細な説明】\n{detailed_description}\n",
-            "claims": "【請求項】\n{claims}\n"
-        }
-        return templates.get(section, f"【{section}】\n{{content}}\n")
+#### 発明分析機能
 
+```python
     def analyze_invention(self, invention_data: Dict) -> Dict:
         """発明内容の分析"""
         analysis = {
@@ -699,68 +889,15 @@ class PatentSpecificationGenerator:
         analysis["implementation_details"] = self.extract_implementation_details(description)
 
         return analysis
+```
 
-    def extract_technical_elements(self, text: str) -> List[str]:
-        """技術要素の抽出"""
-        # 技術用語のパターンマッチング
-        technical_patterns = [
-            r"システム", r"装置", r"方法", r"プログラム", r"アルゴリズム",
-            r"データ", r"処理", r"制御", r"検出", r"分析"
-        ]
+---
 
-        elements = []
-        for pattern in technical_patterns:
-            matches = re.findall(pattern, text)
-            elements.extend(matches)
+## 4-4. 事例 3: 明細書作成支援システム（ 8）
 
-        return list(set(elements))
+#### セクション生成機能
 
-    def extract_novel_features(self, text: str) -> List[str]:
-        """新規性の特徴を抽出"""
-        novel_patterns = [
-            r"新たな", r"改良された", r"改善された", r"効率的な",
-            r"高精度な", r"高速な", r"自動化された"
-        ]
-
-        features = []
-        for pattern in novel_patterns:
-            matches = re.findall(pattern, text)
-            features.extend(matches)
-
-        return list(set(features))
-
-    def extract_advantages(self, text: str) -> List[str]:
-        """利点の抽出"""
-        advantage_patterns = [
-            r"効率.*向上", r"精度.*向上", r"速度.*向上",
-            r"コスト.*削減", r"品質.*向上", r"安全性.*向上"
-        ]
-
-        advantages = []
-        for pattern in advantage_patterns:
-            matches = re.findall(pattern, text)
-            advantages.extend(matches)
-
-        return list(set(advantages))
-
-    def extract_implementation_details(self, text: str) -> List[str]:
-        """実装詳細の抽出"""
-        # 実装に関連する詳細情報を抽出
-        implementation_keywords = [
-            "ステップ", "処理", "判定", "計算", "出力", "入力",
-            "設定", "初期化", "実行", "終了"
-        ]
-
-        details = []
-        sentences = text.split("。")
-        for sentence in sentences:
-            for keyword in implementation_keywords:
-                if keyword in sentence:
-                    details.append(sentence.strip())
-                    break
-
-        return details
-
+```python
     def generate_section(self, section_name: str, analysis: Dict, invention_data: Dict) -> str:
         """セクションの生成"""
         template = self.templates.get(section_name, "")
@@ -782,57 +919,15 @@ class PatentSpecificationGenerator:
             content = f"{section_name}の内容"
 
         return template.format(content=content)
+```
 
-    def generate_technical_field(self, analysis: Dict) -> str:
-        """技術分野の生成"""
-        elements = analysis.get("technical_elements", [])
-        if elements:
-            return f"本発明は、{', '.join(elements[:3])}に関する技術分野に属する。"
-        return "本発明は、情報処理技術分野に属する。"
+---
 
-    def generate_background_art(self, analysis: Dict) -> str:
-        """背景技術の生成"""
-        return "従来技術においては、様々な課題が存在している。本発明は、これらの課題を解決することを目的とする。"
+## 4-4. 事例 3: 明細書作成支援システム（ 9）
 
-    def generate_summary(self, analysis: Dict) -> str:
-        """発明の概要の生成"""
-        novel_features = analysis.get("novel_features", [])
-        advantages = analysis.get("advantages", [])
+#### 品質チェック機能
 
-        summary = "本発明は、"
-        if novel_features:
-            summary += f"{', '.join(novel_features[:2])}を特徴とする。"
-        else:
-            summary += "改良された技術を提供する。"
-
-        if advantages:
-            summary += f"これにより、{', '.join(advantages[:2])}が実現される。"
-
-        return summary
-
-    def generate_detailed_description(self, analysis: Dict) -> str:
-        """発明の詳細な説明の生成"""
-        details = analysis.get("implementation_details", [])
-
-        description = "以下、本発明の詳細な説明を行う。\n\n"
-
-        for i, detail in enumerate(details[:5], 1):
-            description += f"{i}. {detail}\n"
-
-        return description
-
-    def generate_claims(self, analysis: Dict) -> str:
-        """請求項の生成"""
-        novel_features = analysis.get("novel_features", [])
-
-        claims = "1. "
-        if novel_features:
-            claims += f"{', '.join(novel_features[:3])}を含むことを特徴とする発明。"
-        else:
-            claims += "改良された技術を特徴とする発明。"
-
-        return claims
-
+```python
     def check_quality(self, specification: str) -> Dict:
         """品質チェックの実行"""
         quality_score = 0.0
@@ -862,54 +957,21 @@ class PatentSpecificationGenerator:
             "issues": issues,
             "recommendations": self.generate_recommendations(issues)
         }
+```
 
-    def generate_recommendations(self, issues: List[str]) -> List[str]:
-        """修正提案の生成"""
-        recommendations = []
+---
 
-        for issue in issues:
-            if "文字数" in issue:
-                recommendations.append("より詳細な説明を追加してください")
-            elif "必須セクション" in issue:
-                recommendations.append("不足しているセクションを追加してください")
-            elif "技術用語" in issue:
-                recommendations.append("技術的詳細を追加してください")
+## 4-4. 事例 3: 明細書作成支援システム（ 10）
 
-        return recommendations
+#### 使用例
 
-    def generate_specification(self, invention_data: Dict) -> Dict:
-        """明細書の生成"""
-        logging.info("明細書生成を開始")
-
-        # 発明内容の分析
-        analysis = self.analyze_invention(invention_data)
-
-        # 各セクションの生成
-        specification = ""
-        for section in self.config["required_sections"]:
-            section_content = self.generate_section(section, analysis, invention_data)
-            specification += section_content + "\n\n"
-
-        # 品質チェック
-        quality_result = self.check_quality(specification)
-
-        result = {
-            "specification": specification,
-            "quality_score": quality_result["score"],
-            "issues": quality_result["issues"],
-            "recommendations": quality_result["recommendations"],
-            "analysis": analysis
-        }
-
-        logging.info(f"明細書生成完了: 品質スコア {quality_result['score']:.2f}")
-
-        return result
-
+```python
 # 使用例
 if __name__ == "__main__":
     invention_data = {
         "title": "AI技術による特許分析システム",
-        "description": "本発明は、AI技術を用いて特許文献を自動分析し、新規性と進歩性を評価するシステムである。新たな機械学習アルゴリズムにより、効率的で高精度な分析が可能となる。"
+        "description": """本発明は、AI技術を用いて特許文献を自動分析し、新規性と進歩性を評価するシステムである。
+        新たな機械学習アルゴリズムにより、効率的で高精度な分析が可能となる。"""
     }
 
     generator = PatentSpecificationGenerator()
@@ -922,7 +984,7 @@ if __name__ == "__main__":
 
 ---
 
-## 4-5. コードが読めない人でもできる実践的コツ
+## 4-5. コードが読めない人でもできるコツ
 
 #### 基本的なアプローチ
 
@@ -933,7 +995,11 @@ if __name__ == "__main__":
 3. **改善を重ねる**: フィードバックによる改善
 4. **拡張していく**: 機能を段階的に追加
 
-**効果的な指示方法**
+---
+
+## 4-5. コードが読めない人でもできるコツ（ 1）
+
+#### 効果的な指示方法
 
 - **具体的な要件**: 曖昧さを排除した明確な指示
 - **段階的な指示**: 複雑な機能は分割して指示
@@ -944,16 +1010,25 @@ if __name__ == "__main__":
 
 **よくある問題と解決方法**
 
-| 問題                   | 原因             | 解決方法                           |
-| ---------------------- | ---------------- | ---------------------------------- |
-| **コードが動作しない** | 依存関係の不足   | 必要なライブラリのインストール指示 |
-| **期待と異なる結果**   | 要件の曖昧さ     | より具体的な要件の提示             |
-| **エラーが発生する**   | 入力データの問題 | エラーハンドリングの追加指示       |
-| **処理が遅い**         | 非効率な実装     | 最適化の指示                       |
+| 問題                   | 原因           | 解決方法                           |
+| ---------------------- | -------------- | ---------------------------------- |
+| **コードが動作しない** | 依存関係の不足 | 必要なライブラリのインストール指示 |
+| **期待と異なる結果**   | 要件の曖昧さ   | より具体的な要件の提示             |
 
 ---
 
-## 4-5. コードが読めない人でもできる実践的コツ（続き）
+## 4-5. コードが読めない人でもできるコツ（ 2）
+
+#### トラブルシューティング（）
+
+| 問題                 | 原因             | 解決方法                     |
+| -------------------- | ---------------- | ---------------------------- |
+| **エラーが発生する** | 入力データの問題 | エラーハンドリングの追加指示 |
+| **処理が遅い**       | 非効率な実装     | 最適化の指示                 |
+
+---
+
+## 4-5. コードが読めない人でもできるコツ（ 3）
 
 #### 継続的な改善
 
@@ -964,14 +1039,22 @@ if __name__ == "__main__":
 3. **改善**: 問題点を特定
 4. **再生成**: 改善されたコードを生成
 
-**ベストプラクティス**
+---
+
+## 4-5. コードが読めない人でもできるコツ（ 4）
+
+#### ベストプラクティス
 
 - **バージョン管理**: コードの変更履歴を記録
 - **ドキュメント化**: 使用方法と注意点を記録
 - **テスト**: 動作確認を徹底
 - **バックアップ**: 重要なコードは保存
 
-#### 実践的なアドバイス
+---
+
+## 4-5. コードが読めない人でもできるコツ（ 5）
+
+#### アドバイス
 
 **成功のポイント**
 
@@ -980,7 +1063,11 @@ if __name__ == "__main__":
 - **継続的な学習**: 失敗から学び、改善する
 - **専門家の活用**: 必要に応じて専門家に相談
 
-**避けるべきパターン**
+---
+
+## 4-5. コードが読めない人でもできるコツ（ 6）
+
+#### 避けるべきパターン
 
 - **過度な複雑化**: 一度に多くの機能を求めない
 - **曖昧な指示**: 具体的でない指示は避ける
@@ -989,7 +1076,338 @@ if __name__ == "__main__":
 
 ---
 
-## 4-6. 自動化の効果測定と改善
+## 4-6. 生成 AI を活用したノーコードツール
+
+#### ノーコードツールの基本概念
+
+**ノーコードツールとは**
+
+- **プログラミング不要**: コードを書かずにアプリケーション構築
+- **ビジュアル開発**: ドラッグ&ドロップで機能を組み合わせ
+- **AI 統合**: 生成 AI との連携で高度な機能を実現
+- **迅速開発**: 数時間で本格的なアプリケーション構築
+
+---
+
+## 4-6. 生成 AI を活用したノーコードツール（ 1）
+
+#### 知財業務での活用
+
+- **自動化ワークフロー**: 定型業務の自動化
+- **データ処理**: 大量データの効率的処理
+- **レポート生成**: 自動レポート作成システム
+- **通知システム**: 重要情報の自動通知
+
+---
+
+## 4-6. 生成 AI を活用したノーコードツール（ 2）
+
+#### 主要なノーコードツール
+
+**1. Dify**
+[公式](https://dify.ai/) 動画を見てもらうとイメージがつかめて良いと思う
+
+- **特徴**: AI アプリケーション構築プラットフォーム
+- **用途**: チャットボット、AI アシスタント、ワークフロー自動化
+- **利点**: 直感的な UI、豊富な AI モデル対応
+- **知財業務での活用**: 特許調査アシスタント、明細書作成支援
+
+---
+
+## 4-6. 生成 AI を活用したノーコードツール（ 3）
+
+#### 主要なノーコードツール（）
+
+**2. n8n**
+[公式](https://n8n.io/) 動画を見てもらうとイメージがつかめて良いと思う
+
+- **特徴**: オープンソースのワークフロー自動化ツール
+- **用途**: システム連携、データ処理、API 統合
+- **利点**: 高度なカスタマイズ、無料で利用可能
+- **知財業務での活用**: 特許データ収集、定期レポート作成
+
+---
+
+## 4-6. 生成 AI を活用したノーコードツール（ 4）
+
+#### 主要なノーコードツール（ 2）
+
+**3. FlowiseAI**
+[公式](https://flowiseai.com/) 動画を見てもらうとイメージがつかめて良いと思う
+
+- **特徴**: LangChain ベースの AI アプリケーション構築
+- **用途**: RAG システム、AI エージェント、チャットボット
+- **利点**: 専門的な AI 機能、柔軟なカスタマイズ
+- **知財業務での活用**: 特許文献検索、技術動向分析
+- LangChain ベースなのでエコシステムが膨大で自分で書き足す場合も便利でおすすめ。
+
+---
+
+## 4-7. Dify を使った知財業務の自動化
+
+#### Dify の基本設定
+
+**アカウント作成**
+
+```
+1. https://dify.ai にアクセス
+2. アカウント作成（無料プランあり）
+3. ワークスペースの作成
+4. プロジェクトの設定
+```
+
+---
+
+## 4-7. Dify を使った知財業務の自動化（ 1）
+
+#### 主要機能・活用例
+
+**主要機能**
+
+- **チャットアプリ**: 対話型 AI アプリケーション
+- **ワークフロー**: 自動化フローの構築
+- **データセット**: 独自データの学習
+- **API 連携**: 外部システムとの連携
+
+**特許調査アシスタントの構築**
+
+```
+1. チャットアプリの作成
+2. プロンプトの設定
+3. 特許データベースの連携
+4. 回答テンプレートの設定
+5. テスト・公開
+```
+
+---
+
+## 4-7. Dify を使った知財業務の自動化（ 2）
+
+#### 期待される効果
+
+- 調査時間の 60%短縮
+- 回答精度の向上
+- 24 時間対応可能
+- 一貫性のある回答
+
+---
+
+## 4-7. Dify を使った知財業務の自動化（ 3）
+
+#### 設定例
+
+**プロンプト設定**
+
+```
+役割: 特許調査の専門家
+専門分野: AI技術、機械学習、特許法
+回答形式: 構造化された分析結果
+制約: 最新情報の確認、法的根拠の明示
+```
+
+---
+
+## 4-7. Dify を使った知財業務の自動化（ 4）
+
+#### ワークフロー設定
+
+1. **入力受付**: ユーザーからの質問受付
+2. **情報収集**: 特許データベースからの情報取得
+3. **分析実行**: AI による分析・評価
+4. **結果出力**: 構造化された回答の生成
+5. **通知送信**: 結果の自動通知
+
+---
+
+## 4-7. Dify を使った知財業務の自動化（ 5）
+
+#### データセット活用
+
+- **特許文献**: 関連特許文献の登録
+- **技術資料**: 技術動向資料の登録
+- **法規制**: 特許法・関連法規の登録
+- **事例集**: 過去の調査事例の登録
+
+---
+
+## 4-8. n8n を使ったワークフロー自動化
+
+#### n8n の基本設定
+
+**インストール・設定**
+
+```
+1. https://n8n.io からダウンロード
+2. ローカル環境でのインストール
+3. またはクラウド版の利用
+4. ワークスペースの設定
+```
+
+---
+
+## 4-8. n8n を使ったワークフロー自動化（ 1）
+
+#### 主要機能・活用例
+
+**主要機能**
+
+- **ノード**: 各種サービスとの連携
+- **ワークフロー**: 処理フローの構築
+- **スケジューリング**: 定期実行の設定
+- **エラーハンドリング**: 異常時の対応
+
+**特許データ収集の自動化**
+
+```
+1. 特許庁APIとの連携設定
+2. 定期検索のスケジューリング
+3. 新規特許の自動抽出
+4. 重要度評価の実行
+5. 結果の自動通知
+```
+
+---
+
+## 4-8. n8n を使ったワークフロー自動化（ 2）
+
+#### 期待される効果
+
+- データ収集の完全自動化
+- リアルタイム監視の実現
+- 人的作業の大幅削減
+- 見落としの防止
+
+---
+
+## 4-8. n8n を使ったワークフロー自動化（ 3）
+
+#### ワークフロー例
+
+**特許監視システム**
+
+**ノード構成**
+
+1. **トリガーノード**: 定期実行（毎日 9 時）
+2. **HTTP Request**: 特許庁 API 呼び出し
+3. **Filter**: 新規特許の抽出
+4. **AI Analysis**: 重要度評価
+5. **Email**: 結果通知
+6. **Database**: 結果保存
+
+---
+
+## 4-8. n8n を使ったワークフロー自動化（ 4）
+
+#### 設定ポイント・拡張機能
+
+**設定ポイント**
+
+- **エラーハンドリング**: API 障害時の対応
+- **重複チェック**: 既存データとの照合
+- **重要度フィルタ**: 閾値以上の特許のみ通知
+- **フォーマット**: 読みやすい形式での出力
+
+---
+
+#### 設定ポイント・拡張機能
+
+**拡張機能**
+
+- **Slack 連携**: チーム内での共有
+- **Excel 出力**: レポート形式での出力
+- **Webhook**: 外部システムへの通知
+- **条件分岐**: 重要度による処理分岐
+
+---
+
+## 4-9. FlowiseAI を使った RAG システム構築
+
+#### FlowiseAI の基本設定
+
+**インストール・設定**
+
+```
+1. https://flowiseai.com からダウンロード
+2. Node.js環境でのインストール
+3. 設定ファイルの編集
+4. サービスの起動
+```
+
+---
+
+## 4-9. FlowiseAI を使った RAG システム構築（ 1）
+
+#### 主要機能・活用例
+
+**主要機能**
+
+- **チャットフロー**: 対話型 AI の構築
+- **ベクトルストア**: 文書データの管理
+- **ツール連携**: 外部 API との連携
+- **カスタマイズ**: 高度なカスタマイズ
+
+**特許文献検索システム**
+
+```
+1. 特許文献のベクトル化
+2. 検索インターフェースの構築
+3. 関連文献の自動抽出
+4. 技術動向の分析
+5. レポート生成
+```
+
+---
+
+## 4-9. FlowiseAI を使った RAG システム構築（ 2）
+
+#### 期待される効果
+
+- 検索精度の大幅向上
+- 関連文献の発見率向上
+- 技術動向の迅速把握
+- 分析作業の効率化
+
+---
+
+## 4-9. FlowiseAI を使った RAG システム構築（ 3）
+
+#### システム構築
+
+**データ準備**
+
+1. **文書収集**: 特許文献の収集
+2. **前処理**: テキストの正規化
+3. **ベクトル化**: 埋め込みベクトルの生成
+4. **インデックス作成**: 検索用インデックスの構築
+
+---
+
+## 4-9. FlowiseAI を使った RAG システム構築（ 4）
+
+#### フロー設計
+
+**チャットフロー構成**
+
+1. **入力処理**: ユーザー質問の受付
+2. **ベクトル検索**: 関連文書の検索
+3. **コンテキスト生成**: 回答用コンテキストの作成
+4. **AI 回答生成**: LLM による回答生成
+5. **結果出力**: 構造化された回答の出力
+
+---
+
+## 4-9. FlowiseAI を使った RAG システム構築（ 5）
+
+#### 高度な機能
+
+- **複数データソース**: 特許文献・技術資料の統合
+- **動的検索**: リアルタイムでの検索実行
+- **履歴管理**: 検索履歴の保存・活用
+- **分析機能**: 技術動向の自動分析
+
+---
+
+## 4-10. ノーコードツールの効果測定と改善
 
 #### 効果測定の指標
 
@@ -1000,6 +1418,12 @@ if __name__ == "__main__":
 - **精度**: 自動化による精度の変化
 - **コスト**: 人的コスト・運用コストの削減
 
+---
+
+## 4-10. ノーコードツールの効果測定と改善（ 1）
+
+#### 定性的指標・改善サイクル
+
 **定性的指標**
 
 - **品質向上**: 処理結果の品質向上
@@ -1007,7 +1431,9 @@ if __name__ == "__main__":
 - **満足度**: ユーザーの満足度
 - **学習効果**: スキル向上の効果
 
-#### 改善サイクル
+---
+
+## 4-10. ノーコードツールの効果測定と改善（ 2）
 
 **PDCA サイクルの活用**
 
@@ -1016,6 +1442,12 @@ if __name__ == "__main__":
 3. **Check（確認）**: 効果の測定・評価
 4. **Act（改善）**: さらなる改善の実施
 
+---
+
+## 4-10. ノーコードツールの効果測定と改善（ 3）
+
+#### 継続的改善・成功事例
+
 **継続的改善のポイント**
 
 - **定期的な評価**: 月次・四半期での評価
@@ -1023,7 +1455,9 @@ if __name__ == "__main__":
 - **ベンチマーク**: 他社・他業界との比較
 - **新技術の導入**: 最新技術の活用
 
-#### 成功事例の蓄積
+---
+
+## 4-10. ノーコードツールの効果測定と改善（ 4）
 
 **事例の記録**
 
@@ -1032,7 +1466,11 @@ if __name__ == "__main__":
 - **改善プロセス**: 効果的な改善のプロセス
 - **ベストプラクティス**: 標準的な実装パターン
 
-**知識の共有**
+---
+
+## 4-10. ノーコードツールの効果測定と改善（ 5）
+
+#### 知識の共有
 
 - **チーム内共有**: 成功事例のチーム内共有
 - **組織内共有**: 組織全体での共有
