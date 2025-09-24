@@ -215,8 +215,6 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ## 2-3. 事例で学ぶ！プロンプトのブラッシュアップ体験 - 事例 1: 特許文献の要約
 
-<img src="../img/img_02_automation_before_after.png" width="100%">
-
 #### 初級レベル：基本的な指示
 
 **改善前のプロンプト**
@@ -581,8 +579,6 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ## 2-6. プロンプト改善の実践テクニック（続き）
 
-<img src="../img/img_02_ai_service_screens.png" width="100%">
-
 #### Few-Shot Learning（続き）
 
 ```markdown
@@ -613,8 +609,8 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ---
 
-![Chain of Thought vs Tree of Thoughts](../img/img_02_01_chainogthought.png)
 **図 1: Chain of Thought（左）と Tree of Thoughts（右）の比較**
+![Chain of Thought vs Tree of Thoughts](../img/img_02_01_chainogthought.png)
 
 ---
 
@@ -641,12 +637,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 #### すごく簡単だが性能アップが期待できるもの:Zero-shot Chain-of-Thought
 
-```python
-〜〜(指示など)〜〜
-
-ステップバイステップで考えてください
-
-```
+**コード例**: `code-examples/prompt-templates.md` の「Zero-shot Chain-of-Thought」セクションを参照
 
 ---
 
@@ -958,6 +949,46 @@ Markdown 形式で出力すること
 3. **改善実施**: コンテキスト設計の改善
 4. **効果測定**: 改善効果を測定・評価
 5. **継続改善**: さらなる改善を実施
+
+---
+
+## 2-8. プロンプトの品質評価と改善（3）
+
+#### フロー図(出典：『AWS 生成 AI アプリ構築実践ガイド』から編集）
+
+<img src="../img/img_02_prompt-engineering-flow.svg" height="90%">
+
+---
+
+## 2-8. プロンプトの品質評価と改善（4）
+
+#### それぞれのステップでの留意点
+
+##### タスクと評価基準の定義
+
+- タスクをどのくらい正しく解けるか／応答速度／コスト
+
+##### テストケースの作成
+
+- エッジケース（性能が低下しそうな入力パターンをわざと入れる）
+
+##### 初期プロンプトの作成
+
+- シンプルなもので始める
+
+---
+
+##### テストケースに対するテスト
+
+- スプレッドシートのマクロ、スクリプトなどでテストを早く回す
+
+##### プロンプトの改良
+
+- ルール追加、不要な指示を削除、表現を修正
+
+##### 完成したプロンプトの実装
+
+- 継続的に性能を評価する、作りっぱなしにならないように(POML の章も参考に)
 
 ---
 
@@ -1329,11 +1360,7 @@ Markdown 形式で出力すること
 
 AI の専門性・能力・制約を明確に定義
 
-```python
-
-例：「あなたは特許調査の専門家で、20年の実務経験があります」
-
-```
+**コード例**: `code-examples/prompt-templates.md` の「Role Definition」セクションを参照
 
 ---
 
@@ -1427,12 +1454,7 @@ AI の専門性・能力・制約を明確に定義
 
 **基本設計例**
 
-```python
-<role>
-あなたは特許調査の専門家で、20年の実務経験があります。
-特にAI技術分野での調査に精通しており、新規性・進歩性の評価を得意としています。
-</role>
-```
+**コード例**: `code-examples/prompt-templates.md` の「Role Definition」セクションを参照
 
 ---
 
@@ -1908,18 +1930,7 @@ LLM へのプロンプトで、マークアップ（`<tag>`のような形式）
 
 **プロジェクト概要**
 
-```python
-<role>
-あなたは特許調査プロジェクトのリーダーで、15年の実務経験があります。
-AI技術分野での調査に精通し、効率的で網羅的な調査を専門としています。
-</role>
-
-<context>
-AI技術分野の新規発明について、先行技術調査を実施する必要があります。
-調査結果は特許出願の判断材料として使用されます。
-</context>
-
-```
+**コード例**: `code-examples/prompt-templates.md` の「Project Context」セクションを参照
 
 ---
 
@@ -2710,6 +2721,12 @@ CoT や ToT の一般化したもの。法律系で強いかも。
 
 ---
 
+#### AI エージェントの例：[Baby AGI](https://yoheinakajima.com/task-driven-autonomous-agent-utilizing-gpt-4-pinecone-and-langchain-for-diverse-applications/)
+
+<img src="../img/img_02_task_driven_autonomous_agent.png" width="70%">
+
+---
+
 **知財業務での実践例**
 
 - **特許調査エージェント**: 技術キーワード抽出 → 検索実行 → 関連性評価 → レポート生成 [参考](https://github.com/niship2/patentsearchagent)
@@ -2748,6 +2765,8 @@ CoT や ToT の一般化したもの。法律系で強いかも。
 
 **知財業務での活用例**
 
+このあたりはその人（その企業）しか知らないコンテキストが満載なのですごく重要
+
 - **調査メモ**: 特許調査の過程での発見事項の記録
 - **分析履歴**: 技術分析の過程での判断根拠の保存
 - **学習データ**: 過去の事例からの学習データの蓄積
@@ -2777,10 +2796,13 @@ CoT や ToT の一般化したもの。法律系で強いかも。
 #### コンテキストエンジニアリングの主要な戦略（続き）
 
 **3. Compressing Context (コンテキストを圧縮する)**
+※ 普通は AI エージェントが自動でやるので、意識しなくて良いが、作り込みも可能
 
 - **トークン消費削減**: タスクの実行に必要なトークンのみを保持
 - **要約手法**: 長い文書や対話履歴の要約
 - **トリミング**: 不要な情報の除去
+
+---
 
 **知財業務での活用例**
 
@@ -2791,6 +2813,7 @@ CoT や ToT の一般化したもの。法律系で強いかも。
 ---
 
 **4. Isolating Context (コンテキストを分離する)**
+※ 普通は AI エージェントが自動でやるので、意識しなくて良いが、作り込みも可能
 
 - **コンテキスト分割**: エージェントのタスク実行を助けるためにコンテキストを分割
 - **サブエージェント活用**: 複数のサブエージェントにコンテキストを分割

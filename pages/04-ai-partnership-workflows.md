@@ -363,37 +363,21 @@ AIパートナーシップフロー：
 **より手軽に始められる FAISS と Chroma を使った実装例**
 **4.1. 環境構築**
 
-まず、必要なライブラリをインストール。
+まず、必要なライブラリをインストールする。
 
-```bash
-pip install langchain langchain-openai openai chromadb faiss-cpu tiktoken
-# Pinecone を使う場合は以下も追加
-# pip install pinecone-client
-```
+**コード例**: `code-examples/rag-system-examples.md` の「ライブラリインストール」セクションを参照
 
-環境変数に OpenAI の API キーを設定。
+環境変数に OpenAI の API キーを設定する。
 
-```bash
-export OPENAI_API_KEY="your-openai-api-key"
-```
+**コード例**: `code-examples/rag-system-examples.md` の「環境変数設定」セクションを参照
 
 ---
 
 **4.2. サンプルデータ準備**
 
-`sample.txt` ：RAG の知識源となるテキストファイルを作成。
+`sample.txt` ：RAG の知識源となるテキストファイルを作成する。
 
-```
-sample.txt:
-
-LangChainは、大規模言語モデル（LLM）を活用したアプリケーション開発を簡素化するためのフレームワークです。
-開発者はLangChainを使うことで、複雑なワークフローをコンポーネントの組み合わせで実現できます。
-RAG（Retrieval-Augmented Generation）は、その代表的な応用例の一つです。
-
-RAGシステムは、外部の知識ベースから関連情報を検索し、その情報を基にLLMが回答を生成する仕組みです。
-これにより、LLMが持つ知識を補強し、ハルシネーション（事実に基づかない情報の生成）を抑制することができます。
-ベクトルデータベースは、この情報検索のステップで中心的な役割を果たします。
-```
+**コード例**: `code-examples/rag-system-examples.md` の「サンプルデータ準備」セクションを参照
 
 ---
 
@@ -401,23 +385,7 @@ RAGシステムは、外部の知識ベースから関連情報を検索し、�
 
 **共通コード:**
 
-```python
-import os
-from langchain_community.document_loaders import TextLoader
-from langchain_openai import OpenAIEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-
-# 1. ドキュメントの読み込み
-loader = TextLoader("sample.txt")
-documents = loader.load()
-
-# 2. テキストの分割
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=10)
-texts = text_splitter.split_documents(documents)
-
-# 3. Embeddingモデルの初期化
-embeddings = OpenAIEmbeddings()
-```
+**コード例**: `code-examples/rag-system-examples.md` の「共通コード」セクションを参照
 
 ---
 
@@ -425,71 +393,19 @@ embeddings = OpenAIEmbeddings()
 
 Chroma は指定したディレクトリにデータを永続化するタイプのベクトル DB。
 
-```python
-from langchain_community.vectorstores import Chroma
-
-# 永続化ディレクトリの指定
-persist_directory = 'chroma_db'
-
-# 4. ベクトル化してChromaデータベースに保存
-vectorstore_chroma = Chroma.from_documents(
-    documents=texts,
-    embedding=embeddings,
-    persist_directory=persist_directory
-)
-
-print("Chromaデータベースへの保存が完了しました。")
-```
+**コード例**: `code-examples/rag-system-examples.md` の「Chroma 使用例」セクションを参照
 
 ---
 
 **4.4. Inference: 検索と回答生成**
 
-作成したベクトルストアを使って、質問応答チェーンを構築。
+作成したベクトルストアを使って、質問応答チェーンを構築する。
 
-```python
-from langchain_openai import ChatOpenAI
-from langchain.chains import RetrievalQA
-
-# LLMの初期化
-llm = ChatOpenAI(model_name="gpt-4", temperature=0)
-
-# Chromaを使用する場合
-persist_directory = 'chroma_db'
-embeddings_model = OpenAIEmbeddings()
-vectorstore_chroma = Chroma(
-   persist_directory=persist_directory,
-   embedding_function=embeddings_model)
-retriever = vectorstore_chroma.as_retriever(search_kwargs={"k": 2})
-
-```
+**コード例**: `code-examples/rag-system-examples.md` の「検索と回答生成」セクションを参照
 
 ---
 
-```python
-
-# 質問応答チェーンの作成
-qa_chain = RetrievalQA.from_chain_type(
-    llm=llm,
-    chain_type="stuff", # "stuff"は取得したチャンクを全てプロンプトに詰め込む方式
-    retriever=retriever
-)
-
-# 質問を実行
-question = "RAGシステムにおけるベクトルデータベースの役割は何ですか？"
-response = qa_chain.invoke(question)
-
-print(f"質問: {question}")
-print(f"回答: {response['result']}")
-
-# --- 内部で何が起きているか確認 ---
-# retrieverが質問に関連するチャンクを取得している
-retrieved_docs = retriever.invoke(question)
-print("\n--- 検索された関連チャンク ---")
-for doc in retrieved_docs:
-    print(doc.page_content)
-    print("-" * 20)
-```
+**コード例**: `code-examples/rag-system-examples.md` の「質問応答チェーン」セクションを参照
 
 ---
 
@@ -514,8 +430,8 @@ RAGシステムは、外部の知識ベースから関連情報を検索し、�
 - 今回提示した技術スタックを利用することで、自由に RAG システムを構築可能
 - 市販品や RAG システムでは制御できない部分まで制御可能
 
-* **LangChain** が全体のパイプライン（データ読み込み、分割、LLM 連携）を管理。
-* **OpenAI Embeddings** がテキストの意味を捉えるためのベクトルを生成。
+* **LangChain** が全体のパイプライン（データ読み込み、分割、LLM 連携）を管理する。
+* **OpenAI Embeddings** がテキストの意味を捉えるためのベクトルを生成する。
 * **FAISS / Chroma / Pinecone** がベクトルを効率的に保存・検索する。
 
 まずは FAISS や Chroma で小規模なプロトタイプを構築し、その仕組みを理解した上で、要件に応じて Pinecone のようなスケーラブルなソリューションへ移行する。
@@ -561,59 +477,11 @@ Data 作成 ⇒ 　自動でベクトル DB 化 ⇒Application 作成へ
 
 **自作開発例（LangGraph + AutoGen）**
 
-```python
-# 自作開発によるAI Agent
-from langgraph import StateGraph, END
-from typing import TypedDict, Annotated
-import autogen
-
-class CustomPatentAgent:
-    def __init__(self):
-        # エージェント設定
-        self.researcher = autogen.AssistantAgent(
-            name="researcher",
-            system_message="特許調査の専門家"
-        )
-        self.analyst = autogen.AssistantAgent(
-            name="analyst",
-            system_message="特許分析の専門家"
-        )
-        self.user_proxy = autogen.UserProxyAgent(
-            name="user_proxy",
-            human_input_mode="NEVER"
-        )
-
-```
+> **コード例**: [`code-examples/custom-patent-agent.py`](../code-examples/custom-patent-agent.py)を参照
 
 ---
 
-```pytho
-
-    def research_patent(self, query: str):
-        # マルチエージェントによる調査
-        groupchat = autogen.GroupChat(
-            agents=[self.user_proxy, self.researcher, self.analyst],
-            messages=[],
-            max_round=10
-        )
-        manager = autogen.GroupChatManager(groupchat=groupchat)
-
-        # 調査実行
-        self.user_proxy.initiate_chat(
-            manager,
-            message=f"特許調査を実行してください: {query}"
-        )
-
-```
-
----
-
-```python
-
-# 使用例
-agent = CustomPatentAgent()
-agent.research_patent("AI技術の特許動向")
-```
+> **コード例**: `code-examples/custom-patent-agent-usage.py`を参照
 
 ---
 
@@ -871,282 +739,78 @@ agent.research_patent("AI技術の特許動向")
 
 **特許文献検索・分析システム**
 
-```python
-# 実装例
-import os
-from langchain.document_loaders import PyPDFLoader, DirectoryLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.chat_models import ChatOpenAI
-from langchain.chains import RetrievalQA
-from langchain.prompts import PromptTemplate
-import chromadb
-
-```
+> **コード例**: `code-examples/patent-rag-system.py`を参照
 
 ---
 
-```python
-
-class PatentRAGSystem:
-    def __init__(self, openai_api_key: str):
-        """特許RAGシステムの初期化"""
-        self.openai_api_key = openai_api_key
-        self.embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
-        self.llm = ChatOpenAI(
-            model_name="gpt-4",
-            temperature=0.1,
-            openai_api_key=openai_api_key
-        )
-        self.vectorstore = None
-        self.qa_chain = None
-
-```
+---
 
 ---
 
-```python
-
-    def load_patent_documents(self, directory_path: str):
-        """特許文献の読み込み"""
-        # PDFファイルの読み込み
-        loader = DirectoryLoader(
-            directory_path,
-            glob="**/*.pdf",
-            loader_cls=PyPDFLoader
-        )
-        documents = loader.load()
-
-        # テキストの分割
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=1000,
-            chunk_overlap=200,
-            length_function=len
-        )
-        splits = text_splitter.split_documents(documents)
-
-        return splits
-
-```
+---
 
 ---
 
-```python
-
-    def create_vectorstore(self, documents):
-        """ベクトルストアの作成"""
-        # Chromaベクトルストアの作成
-        self.vectorstore = Chroma.from_documents(
-            documents=documents,
-            embedding=self.embeddings,
-            persist_directory="./patent_chroma_db"
-        )
-
-        # QAチェーンの作成
-        self._create_qa_chain()
-```
-
 ---
-
-```python
-
-    def _create_qa_chain(self):
-        """QAチェーンの作成"""
-        # 特許分析用のプロンプトテンプレート
-        prompt_template = """
-        あなたは特許分析の専門家です。以下の特許文献の情報を基に、質問に回答してください。
-
-        特許文献の情報:
-        {context}
-
-        質問: {question}
-
-        回答は以下の形式で提供してください：
-        1. 技術的要約
-        2. 主要な特徴
-        3. 先行技術との違い
-        4. 実装可能性
-        5. 関連する技術分野
-
-        回答:
-        """
-
-        prompt = PromptTemplate(
-            template=prompt_template,
-            input_variables=["context", "question"]
-        )
-
-        # RetrievalQAチェーンの作成
-        self.qa_chain = RetrievalQA.from_chain_type(
-            llm=self.llm,
-            chain_type="stuff",
-            retriever=self.vectorstore.as_retriever(
-                search_type="similarity",
-                search_kwargs={"k": 5}
-            ),
-            chain_type_kwargs={"prompt": prompt}
-        )
-
-```
-
----
-
-```python
-
-    def search_patents(self, query: str, top_k: int = 5):
-        """特許文献の検索"""
-        if not self.vectorstore:
-            raise ValueError("ベクトルストアが初期化されていません")
-
-        # 類似度検索の実行
-        docs = self.vectorstore.similarity_search(query, k=top_k)
-        return docs
-
-    def analyze_patent(self, question: str):
-        """特許文献の分析"""
-        if not self.qa_chain:
-            raise ValueError("QAチェーンが初期化されていません")
-
-        # 質問に対する回答を生成
-        response = self.qa_chain.run(question)
-        return response
-
-```
-
----
-
-```python
-
-    def generate_patent_report(self, technology_domain: str):
-        """特許分析レポートの生成"""
-        questions = [
-            f"{technology_domain}分野の主要な技術動向は何ですか？",
-            f"{technology_domain}分野で注目すべき特許はありますか？",
-            f"{technology_domain}分野の技術的課題は何ですか？",
-            f"{technology_domain}分野の将来展望はどうですか？"
-        ]
-
-        report = {
-            "technology_domain": technology_domain,
-            "analysis_results": []
-        }
-
-        for question in questions:
-            answer = self.analyze_patent(question)
-            report["analysis_results"].append({
-                "question": question,
-                "answer": answer
-            })
-
-        return report
-
-```
 
 ---
 
 # 使用例
 
-```python
-def main(): # API キーの設定
-openai_api_key = os.getenv("OPENAI_API_KEY")
-
-    # RAGシステムの初期化
-    rag_system = PatentRAGSystem(openai_api_key)
-
-    # 特許文献の読み込み
-    documents = rag_system.load_patent_documents("./patent_documents")
-
-    # ベクトルストアの作成
-    rag_system.create_vectorstore(documents)
-
-    # 特許文献の検索
-    search_results = rag_system.search_patents("AI技術の特許", top_k=3)
-    print("検索結果:", search_results)
-
-    # 特許文献の分析
-    analysis_result = rag_system.analyze_patent("この特許の技術的新規性は何ですか？")
-    print("分析結果:", analysis_result)
-
-    # レポートの生成
-    report = rag_system.generate_patent_report("人工知能")
-    print("レポート:", report)
-
-if name == "main":
-   main()
-
-```
+> **コード例**: `code-examples/patent-rag-system.py`の`main()`関数を参照
 
 **高度な RAG システムの機能拡張**
 
-```python
-# 高度な機能を追加したRAGシステム
-class AdvancedPatentRAGSystem(PatentRAGSystem):
-    def __init__(self, openai_api_key: str):
-        super().__init__(openai_api_key)
-        self.conversation_memory = []
-        self.analysis_history = []
+> **コード例**: `code-examples/advanced-patent-rag-system.py`を参照
 
-    def add_conversation_memory(self, query: str, response: str):
-        """会話履歴の追加"""
-        self.conversation_memory.append({
-            "query": query,
-            "response": response,
-            "timestamp": datetime.now()
-        })
+---
 
-    def get_contextual_response(self, query: str):
-        """文脈を考慮した回答生成"""
-        # 過去の会話履歴を含めたコンテキスト作成
-        context = self._build_conversation_context()
+### 高度な RAG の技術: HyDE
 
-        # 文脈を考慮した質問の生成
-        contextual_query = f"""
-        過去の会話履歴:
-        {context}
+**HyDE (Hypothetical Document Embeddings)** 検索精度を向上させるための先進的な手法。
 
-        現在の質問: {query}
+1.  **課題**: ユーザーのクエリが曖昧だったり、検索対象の文書と表現が異なると、最適な文書を見つけられない。
+2.  **解決策**:
+    1.  まず、LLM がユーザーのクエリに対して「架空の（Hypothetical な）回答」を生成します。
+    2.  次に、その架空の回答を埋め込み（Embedding）に変換します。
+    3.  最後に、その埋め込みを使ってベクトル検索を行い、関連文書を探します。
+3.  **効果**: クエリの意図をより正確に捉えた検索が可能になり、回答の精度が向上します。
 
-        上記の文脈を考慮して回答してください。
-        """
+---
 
-        response = self.analyze_patent(contextual_query)
-        self.add_conversation_memory(query, response)
+### 高度な RAG の技術: Multi-Query Retriever
 
-        return response
+ユーザーの単一のクエリを、LLM を使って複数の異なる視点からのクエリに変換し、並行して検索を実行する手法
 
-    def _build_conversation_context(self):
-        """会話履歴のコンテキスト構築"""
-        if not self.conversation_memory:
-            return ""
+1.  **クエリ生成**: LLM が元のクエリを複数のバリエーション（例：異なる言い回し、専門用語での問い）に書き換えます。
+2.  **並列検索**: 生成された複数のクエリで同時に検索を実行します。
+3.  **結果統合**: すべての検索結果を統合し、重複を除去して最終的な文書セットを作成します。
 
-        # 最新の5つの会話を取得
-        recent_conversations = self.conversation_memory[-5:]
-        context = ""
+**効果**: 単一のクエリでは見逃しがちな関連文書を、多角的なアプローチで捉えることができます。
 
-        for conv in recent_conversations:
-            context += f"Q: {conv['query']}\nA: {conv['response']}\n\n"
+---
 
-        return context
+### 高度な RAG の技術: RAG-Fusion
 
-    def export_analysis_report(self, format_type: str = "json"):
-        """分析レポートのエクスポート"""
-        report_data = {
-            "conversation_history": self.conversation_memory,
-            "analysis_history": self.analysis_history,
-            "vectorstore_info": {
-                "document_count": len(self.vectorstore.get()["documents"]) if self.vectorstore else 0
-            }
-        }
+Multi-Query の考え方をさらに発展させ、検索結果の「再ランク付け」を組み合わせて最も関連性の高い情報を特定する手法
 
-        if format_type == "json":
-            return json.dumps(report_data, indent=2, default=str)
-        elif format_type == "csv":
-            # CSV形式でのエクスポート実装
-            pass
+1.  **複数クエリ生成**: 元のクエリから複数のバリエーションを生成します。
+2.  **並列検索**: 各クエリで文書を検索します。
+3.  **ランクフュージョン**: Reciprocal Rank Fusion (RRF) 等のアルゴリズムで各検索結果の順位を統合し、全体で高くランク付けされた文書を上位に引き上げます。
 
-        return report_data
-```
+**効果**: 複数の検索結果の良い部分を組み合わせることで、ノイズを減らし、核心的な情報を効果的に抽出できます。
+
+---
+
+### 高度な RAG の技術: Rerank（再ランク付け）
+
+ベクトル検索で大まかに取得した文書群を、より精度の高いモデル（Reranker）で関連順に並べ替える手法
+
+1.  **取得 (Retrieve)**: ベクトル検索で、関連する可能性のある文書を多めに（例: 100 件）取得します。
+2.  **再ランク付け (Rerank)**: 取得した各文書とクエリのペアを、より高性能なモデル（クロスエンコーダー等）で関連度スコアを再計算します。
+3.  **選択 (Select)**: 新しいスコアに基づき、本当に LLM に渡す文書（例: 5 件）を選び抜きます。
+
+**効果**: 検索の「速度」と「精度」を両立させ、最終的な回答の品質を大幅に向上させます。
 
 ---
 
@@ -1355,32 +1019,9 @@ class AdvancedPatentRAGSystem(PatentRAGSystem):
 
 #### LangChain の活用例 **特許分析システムの構築**
 
-```python
-from langchain import LLMChain, PromptTemplate
-from langchain.llms import OpenAI
-from langchain.memory import ConversationBufferMemory
-
-# 特許分析用のチェーン
-patent_analysis_chain = LLMChain(
-    llm=OpenAI(temperature=0.1),
-    prompt=PromptTemplate(
-        input_variables=["patent_text", "analysis_type"],
-        template="""
-        あなたは特許分析の専門家です。
-        以下の特許文献を{analysis_type}の観点から分析してください：
-
-        {patent_text}
-
-        分析結果：
-        """
-    ),
-    memory=ConversationBufferMemory()
-)
-```
+> **コード例**: `code-examples/langchain-patent-analysis.py`を参照
 
 ---
-
-````python
 
 #### LangGraph の基本概念
 
@@ -1398,41 +1039,13 @@ patent_analysis_chain = LLMChain(
 - **レポート生成**: 自動レポート生成システム
 - **監視システム**: 継続的な監視システム
 
-```
-
 ---
 
 #### LangGraph の活用例
 
 **特許監視ワークフロー**
 
-```python
-from langgraph import StateGraph, END
-from typing import TypedDict, Annotated
-
-# 状態の定義
-class PatentState(TypedDict):
-    keywords: list
-    search_results: list
-    analysis_results: dict
-    report: str
-
-# ワークフローの定義
-def create_patent_monitoring_workflow():
-    workflow = StateGraph(PatentState)
-
-    # ノードの追加
-    workflow.add_node("search", search_patents)
-    workflow.add_node("analyze", analyze_patents)
-    workflow.add_node("report", generate_report)
-
-    # エッジの追加
-    workflow.add_edge("search", "analyze")
-    workflow.add_edge("analyze", "report")
-    workflow.add_edge("report", END)
-
-    return workflow.compile()
-````
+> **コード例**: `code-examples/langgraph-patent-monitoring.py`を参照
 
 ---
 
@@ -1458,27 +1071,7 @@ def create_patent_monitoring_workflow():
 
 **特許調査エージェント**
 
-```python
-from google.generativeai import GenerativeModel
-from google.ai.generativelanguage import Content
-
-# 特許調査エージェントの作成
-class PatentResearchAgent:
-    def __init__(self):
-        self.model = GenerativeModel('gemini-pro')
-        self.tools = [
-            PatentSearchTool(),
-            TechnicalAnalysisTool(),
-            ReportGenerationTool()
-        ]
-
-    def research_patent(self, query):
-        # 特許調査の実行
-        search_results = self.tools[0].search(query)
-        analysis = self.tools[1].analyze(search_results)
-        report = self.tools[2].generate(analysis)
-        return report
-```
+> **コード例**: `code-examples/google-patent-research-agent.py`を参照
 
 ---
 
@@ -1558,9 +1151,12 @@ class PatentResearchAgent:
 
 #### ACP と MCP の違い
 
-<img src="../img/img_05_12_ACP.png" width="70%">
-
+<img src="../img/img_05_12_ACP.png" width="65%">
 [参照](https://qiita.com/okikusan-public/items/196f1a781b3bf33536aa)
+
+---
+
+- 詳細や具体例は次の章で
 
 ---
 
@@ -1568,7 +1164,8 @@ class PatentResearchAgent:
 
 <img src="../img/img_05_13_AgentDesignPattern.png" height="80%">
 
-[参考 1](https://arxiv.org/html/2405.10467v4),[参考 2](https://qiita.com/Chi_corp_123/items/cf26215878cad285599b),知財業務で使えるパターンの発見＆作り込みは必要だが。。。
+- 参考 1:(https://arxiv.org/html/2405.10467v4),
+- 参考 2:(https://qiita.com/Chi_corp_123/items/cf26215878cad285599b)
 
 ---
 
@@ -1577,6 +1174,8 @@ class PatentResearchAgent:
 ### 目的
 
 特許出願前に、発明の新規性や進歩性を判断するため、関連する先行技術文献を網羅的に調査・分析する。
+
+---
 
 ### 使用するデザインパターン
 
@@ -1603,6 +1202,8 @@ class PatentResearchAgent:
 
 自社が保有する商標と類似する商標の出願や、EC サイト・SNS 上での不正使用を継続的に監視し、ブランド価値の毀損を防ぐ。
 
+---
+
 ### 使用するデザインパターン
 
 - **Proactive Goal Creator**: 定期的に各国の商標データベースをスキャンするだけでなく、画像認識や自然言語処理技術を用いて、ウェブ上のロゴの無断使用や紛らわしい商品説明を能動的に検知
@@ -1627,6 +1228,8 @@ class PatentResearchAgent:
 ### 目的
 
 ライセンス契約や共同研究開発契約などのドラフト作成を支援し、レビュー時には契約内容に潜むリスクを指摘する。
+
+---
 
 ### 使用するデザインパターン
 
@@ -1653,6 +1256,8 @@ class PatentResearchAgent:
 
 研究開発者との対話を通じて、既存技術の新たな組み合わせや異分野技術の応用を提案し、革新的な発明のアイデア創出を促進する。
 
+---
+
 ### 使用するデザインパターン
 
 - **Multi-Path Plan Generator**: 一つの技術課題に対し、複数の異なる解決アプローチをツリー構造で提示し、ユーザーは各分岐点で興味のある方向性を選択してアイデアを深掘り
@@ -1677,6 +1282,8 @@ class PatentResearchAgent:
 ### 目的
 
 企業が保有する特許群（ポートフォリオ）を分析し、事業戦略との整合性を評価
+
+---
 
 ### 使用するデザインパターン
 
@@ -1705,10 +1312,10 @@ class PatentResearchAgent:
 AI エージェントが、自身の学習データに含まれていない最新の、あるいは専門的な外部知識ソースにアクセスし、回答の正確性と網羅性を向上させる。
 
 **仕組み**
-ユーザーからの質問に対し、まず関連する情報をデータベースやウェブから検索（Retrieval）します。そして、その検索結果をコンテキスト（文脈）としてプロンプトに含め、大規模言語モデル（LLM）に回答を生成（Generation）させます。
+ユーザーからの質問に対し、まず関連する情報をデータベースやウェブから検索（Retrieval）する。そして、その検索結果をコンテキスト（文脈）としてプロンプトに含め、大規模言語モデル（LLM）に回答を生成（Generation）させる。
 
 **具体例**
-最新の法律情報に基づいて質問に答える法律相談 AI。AI は回答を生成する前に、最新の判例データベースを検索します。
+最新の法律情報に基づいて質問に答える法律相談 AI。AI は回答を生成する前に、最新の判例データベースを検索する。
 
 ---
 
@@ -1718,7 +1325,7 @@ AI エージェントが、自身の学習データに含まれていない最�
 AI エージェントの出力や行動に対し、人間がフィードバック（評価、修正、指示）を与えることで、エージェントの性能を継続的に改善・調整する。
 
 **仕組み**
-エージェントが生成した結果を人間がレビューし、「良い/悪い」の評価や、より適切な回答例を提供します。エージェントはこのフィードバックを学習し、将来のタスクに活かします。
+エージェントが生成した結果を人間がレビューし、「良い/悪い」の評価や、より適切な回答例を提供する。エージェントはこのフィードバックを学習し、将来のタスクに活かす。
 
 **具体例**
 AI が作成した報告書を上司が添削し、その内容を AI が学習して次回の報告書作成精度を上げる。
@@ -1731,7 +1338,7 @@ AI が作成した報告書を上司が添削し、その内容を AI が学習�
 複数の AI エージェントが互いの生成物やアイデアをレビューし、フィードバックを交換することで、単一のエージェントでは到達できない高品質な成果物を生み出す。
 
 **仕組み**
-あるエージェントが作成したドラフトを、別の専門性を持つエージェントが批評・改善提案を行います。このプロセスを繰り返すことで、多角的な視点を取り入れた成果物が完成します。
+あるエージェントが作成したドラフトを、別の専門性を持つエージェントが批評・改善提案を行う。このプロセスを繰り返すことで、多角的な視点を取り入れた成果物が完成する。
 
 **具体例**
 「文章作成 AI」が書いたブログ記事を、「SEO 分析 AI」がキーワードの観点からレビューし、改善案を提示する。
@@ -1744,7 +1351,7 @@ AI が作成した報告書を上司が添削し、その内容を AI が学習�
 AI エージェントが不適切、有害、あるいは倫理に反するコンテンツを生成したり、危険な行動を実行したりするのを防ぐための制約やルールを設定する。
 
 **仕組み**
-入力（プロンプト）と出力（生成結果）の両方にフィルターをかけます。特定の禁止ワード、トピック、行動パターンを検知し、ブロックしたり、安全な応答に修正したりします。
+入力（プロンプト）と出力（生成結果）の両方にフィルターをかける。特定の禁止ワード、トピック、行動パターンを検知し、ブロックしたり、安全な応答に修正したりする。
 
 **具体例**
 医療相談 AI が、診断や処方箋の提示といった医師法に抵触する可能性のある回答を生成しないように制限する。
@@ -1757,7 +1364,7 @@ AI エージェントが不適切、有害、あるいは倫理に反するコ�
 テキストだけでなく、画像、音声、動画など複数のデータ形式（モダリティ）にわたってガードレールを適用し、より包括的な安全性を確保する。
 
 **仕組み**
-画像認識技術で不適切な画像を検知したり、音声分析で攻撃的な口調を検知したりするなど、各モダリティに応じた安全チェックを行います。
+画像認識技術で不適切な画像を検知したり、音声分析で攻撃的な口調を検知したりするなど、各モダリティに応じた安全チェックを行う。
 
 **具体例**
 ユーザーがアップロードした画像に不適切なコンテンツが含まれていないか、AI が自動でチェックし、問題があれば処理を中断する。
@@ -1770,7 +1377,7 @@ AI エージェントが不適切、有害、あるいは倫理に反するコ�
 複雑なタスクを達成するために、実行すべき一連のステップ（行動計画）を直線的に生成する。
 
 **仕組み**
-タスクの最終目標を達成するために必要な手順を、順番にリストアップします。例えば、「1. 情報を検索する → 2. 内容を要約する → 3. レポートを作成する」といった計画を立てます。
+タスクの最終目標を達成するために必要な手順を、順番にリストアップする。例えば、「1. 情報を検索する → 2. 内容を要約する → 3. レポートを作成する」といった計画を立てる。
 
 **具体例**
 旅行計画 AI が、「目的地調査 → 航空券予約 → ホテル予約 → 旅程作成」というステップを順番に計画し、実行する。
@@ -1783,7 +1390,7 @@ AI エージェントが不適切、有害、あるいは倫理に反するコ�
 一つの目標に対し、複数の異なるアプローチや代替案を含む計画を生成し、柔軟性や網羅性を高める。
 
 **仕組み**
-タスク達成のための計画をツリー構造やグラフで表現します。各ステップで複数の選択肢を提示し、状況に応じて最適な経路を選べるようにします。
+タスク達成のための計画をツリー構造やグラフで表現する。各ステップで複数の選択肢を提示し、状況に応じて最適な経路を選べるようにする。
 
 **具体例**
 新製品のマーケティング戦略を立案する AI が、「A 案: SNS 広告中心」「B 案: インフルエンサー活用」「C 案: イベント開催」など、複数の実行プランを同時に提案する。
@@ -1796,7 +1403,7 @@ AI エージェントが不適切、有害、あるいは倫理に反するコ�
 指示を待つだけでなく、AI エージェントが自ら周囲の状況やデータを分析し、達成すべき新たな目標や解決すべき課題を能動的に発見・設定する。
 
 **仕組み**
-継続的にデータを監視・分析し、パターンや異常、改善の機会を見つけ出します。そして、それを基に「〜を最適化すべき」「〜のリスクを調査すべき」といった新しいタスクを自ら生成します。
+継続的にデータを監視・分析し、パターンや異常、改善の機会を見つけ出す。そして、それを基に「〜を最適化すべき」「〜のリスクを調査すべき」といった新しいタスクを自ら生成する。
 
 **具体例**
 工場の生産ラインを監視する AI が、特定の工程で遅延が頻発していることを発見し、「この工程のボトルネック解消」を新たな目標として設定し、解決策の検討を始める。
@@ -1809,7 +1416,7 @@ AI エージェントが不適切、有害、あるいは倫理に反するコ�
 一度に完全な情報を LLM に問い合わせるのではなく、対話や思考プロセスを段階的に進め、文脈を維持しながら少しずつ情報を引き出していく。
 
 **仕組み**
-長い対話や複雑な問題解決において、過去のやり取りの要約を次のプロンプトに含めるなどして、文脈を失わずに思考を継続させます。
+長い対話や複雑な問題解決において、過去のやり取りの要約を次のプロンプトに含めるなどして、文脈を失わずに思考を継続させる。
 
 **具体例**
 ユーザーとの長文対話において、AI が直前の会話の要点を記憶し、それを踏まえた上で次の質問を投げかける。
@@ -1822,7 +1429,7 @@ AI エージェントが不適切、有害、あるいは倫理に反するコ�
 LLM とのやり取り（プロンプトとレスポンス）を、より効果的で効率的なものに自動で改善・最適化する。
 
 **仕組み**
-ユーザーの曖昧な指示を、LLM が理解しやすい明確なプロンプトに変換したり、LLM からの出力を、ユーザーが求める形式（表、箇条書きなど）に整形したりします。
+ユーザーの曖昧な指示を、LLM が理解しやすい明確なプロンプトに変換したり、LLM からの出力を、ユーザーが求める形式（表、箇条書きなど）に整形したりする。
 
 **具体例**
 ユーザーが「市場について教えて」と入力すると、AI が「どの市場の、どのような情報（規模、トレンド、競合など）について知りたいですか？」と問い返し、プロンプトを具体化する。
@@ -1835,7 +1442,7 @@ LLM とのやり取り（プロンプトとレスポンス）を、より効果�
 複数の AI エージェントにそれぞれ専門的な役割（例：リサーチャー、ライター、レビューア）を割り当て、分業と協調作業によって複雑なタスクを効率的に遂行する。
 
 **仕組み**
-タスクをサブタスクに分解し、各サブタスクを専門のエージェントに担当させます。オーケストレーター（指揮者）役のエージェントが全体の進捗を管理します。
+タスクをサブタスクに分解し、各サブタスクを専門のエージェントに担当させる。オーケストレーター（指揮者）役のエージェントが全体の進捗を管理する。
 
 **具体例**
 ソフトウェア開発において、「要件定義エージェント」「コーディングエージェント」「テストエージェント」が連携して一つのプログラムを作り上げる。
@@ -1848,7 +1455,7 @@ LLM とのやり取り（プロンプトとレスポンス）を、より効果�
 ある議題に対して、異なる視点や意見を持つ複数のエージェントに討論（ディベート）させることで、より深く、多角的な分析や、創造的なアイデアを生み出す。
 
 **仕組み**
-特定のテーマに対し、賛成、反対、あるいは異なる専門的立場からエージェントが意見を出し合います。その議論のプロセスを通じて、問題の長所・短所や新たな解決策が浮かび上がります。
+特定のテーマに対し、賛成、反対、あるいは異なる専門的立場からエージェントが意見を出し合う。その議論のプロセスを通じて、問題の長所・短所や新たな解決策が浮かび上がる。
 
 **具体例**
 新規事業の是非を判断するために、「楽観的な市場予測 AI」と「悲観的なリスク分析 AI」を討論させ、事業計画の妥当性を検証する。
@@ -1861,7 +1468,7 @@ LLM とのやり取り（プロンプトとレスポンス）を、より効果�
 同じ問題に対して複数のエージェントがそれぞれ独立して出した回答や判断を、投票や多数決によって統合し、最も信頼性の高い結論を導き出す。
 
 **仕組み**
-一つの質問に対し、複数のエージェントに同時に答えさせます。それぞれの回答を比較し、最も多くのエージェントが支持した回答を最終的な結論として採用します。
+一つの質問に対し、複数のエージェントに同時に答えさせる。それぞれの回答を比較し、最も多くのエージェントが支持した回答を最終的な結論として採用する。
 
 **具体例**
 画像に写っている物体が「犬」か「猫」か判断する際に、5 体の画像認識 AI に判定させ、3 体以上が「犬」と答えたら最終結果を「犬」とする。
@@ -1874,7 +1481,7 @@ LLM とのやり取り（プロンプトとレスポンス）を、より効果�
 ユーザーの過去の行動、好み、現在の状況といった文脈（コンテキスト）を動的にプロンプトに組み込むことで、パーソナライズされた応答を生成する。
 
 **仕組み**
-ユーザープロファイル、対話履歴、使用中のアプリケーションなどの情報を取得し、それを基に LLM への指示（プロンプト）をリアルタイムで調整します。
+ユーザープロファイル、対話履歴、使用中のアプリケーションなどの情報を取得し、それを基に LLM への指示（プロンプト）をリアルタイムで調整する。
 
 **具体例**
 EC サイトのチャットボットが、ユーザーの閲覧履歴や過去の購入履歴を考慮して、「お客様におすすめの商品はこちらです」とパーソナライズされた提案をする。
@@ -1887,7 +1494,7 @@ EC サイトのチャットボットが、ユーザーの閲覧履歴や過去�
 複数のタスクや目標を抱えるエージェントが、状況の変化に応じて、どのタスクを優先的に処理すべきかを動的に判断・再計画する。
 
 **仕組み**
-各タスクに緊急度や重要度といったスコアを付け、常に全体の状況を監視します。より緊急で重要なタスクが発生した場合、現在の作業を中断してでもそちらを優先するようにスケジュールを調整します。
+各タスクに緊急度や重要度といったスコアを付け、常に全体の状況を監視する。より緊急で重要なタスクが発生した場合、現在の作業を中断してでもそちらを優先するようにスケジュールを調整する。
 
 **具体例**
 自律走行車が、通常の「目的地への走行」タスクよりも、突如現れた障害物を回避する「緊急停止」タスクを最優先する。
@@ -1900,7 +1507,7 @@ EC サイトのチャットボットが、ユーザーの閲覧履歴や過去�
 LLM が一度に処理できる情報量（コンテキストウィンドウ）の制限に対処するため、限られたウィンドウ内に最も重要で関連性の高い情報を効率的に詰め込む。
 
 **仕組み**
-長い文書や対話履歴を要約したり、古い情報を削除したり、関連性の低い情報をフィルタリングしたりして、プロンプトのサイズを管理します。
+長い文書や対話履歴を要約したり、古い情報を削除したり、関連性の低い情報をフィルタリングしたりして、プロンプトのサイズを管理する。
 
 **具体例**
 長時間にわたる会議の議事録を AI に要約させる際、本筋から外れた雑談部分を自動的に除外し、重要な決定事項だけをコンテキストウィンドウに入れる。
@@ -1913,7 +1520,7 @@ LLM が一度に処理できる情報量（コンテキストウィンドウ）�
 特定のドメインやタスクに特化したデータセットを用いて、汎用的な LLM を再トレーニング（ファインチューニング）し、専門性と性能を向上させる。
 
 **仕組み**
-医療、法律、金融といった専門分野の大量のテキストデータや Q&A データを LLM に追加学習させ、その分野における専門用語の理解や応答精度を高めます。
+医療、法律、金融といった専門分野の大量のテキストデータや Q&A データを LLM に追加学習させ、その分野における専門用語の理解や応答精度を高める。
 
 **具体例**
 医療論文のデータセットでファインチューニングされた LLM が、一般的な LLM よりも正確に医学的な質問に答えられるようにする。
@@ -1926,7 +1533,7 @@ LLM が一度に処理できる情報量（コンテキストウィンドウ）�
 開発・運用中の AI エージェントの性能、信頼性、安全性を客観的かつ体系的に評価するための仕組み。
 
 **仕組み**
-事前に定義された評価基準（正答率、応答速度、安全性など）に基づき、シミュレーション環境やテストデータセットを用いてエージェントの能力を測定します。評価結果を基に、改善点を発見します。
+事前に定義された評価基準（正答率、応答速度、安全性など）に基づき、シミュレーション環境やテストデータセットを用いてエージェントの能力を測定する。評価結果を基に、改善点を発見する。
 
 **具体例**
 新しく開発した顧客対応チャットボットに対し、想定される様々な質問シナリオを流し込み、どれだけ正確かつ丁寧に対応できるかを自動でスコアリングする。

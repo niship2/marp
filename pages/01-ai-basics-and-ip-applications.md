@@ -98,6 +98,11 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ---
 
+今回の資料で使うコード等はすべて github 上に公開されています。
+https://github.com/niship2/marp
+
+---
+
 # 1. 生成 AI の基本と知財業務への応用（プログラミング不要）
 
 ---
@@ -139,8 +144,6 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 | **Claude**  | 論理的思考・安全性重視        | 法的分析・品質チェック |
 | **Gemini**  | マルチモーダル・Google 統合   | 図面解析・多言語処理   |
 | **Copilot** | Office 統合・リアルタイム支援 | 文書作成・プレゼン作成 |
-
-<img src="../img/img_01_ai_model_evolution.png" width="100%">
 
 ---
 

@@ -55,66 +55,19 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 #### 知財業務での活用例
 
-```python
-# Claude Code による特許分析ツールの自動生成
-<role>
-あなたは特許分析システム開発の専門家で、PythonとAI技術に精通しています。
-効率的で保守性の高いコード作成と、特許業務の自動化を得意としています。
-</role>
+Claude Code を使用した特許分析ツールの自動生成例：
 
-<context>
-特許文献の自動分析ツールを開発する必要があります。
-特許データベースからの情報取得、技術分類、競合分析、レポート生成を統合したシステムが求められています。
-</context>
+**参照ファイル**: [`code-examples/claude-code-patent-analysis-tool.py`](../code-examples/claude-code-patent-analysis-tool.py)
 
-<task>
-以下の要件で特許文献の自動分析ツールを作成してください：
+この例では、Claude Code のプロンプトエンジニアリング機能を活用して、特許文献の自動分析ツールを段階的に開発するプロセスを示しています。プロンプトには以下の要素が含まれています：
 
-機能要件：
-- 特許データベースからの情報取得
-- 技術分類の自動化
-- 競合分析の実行
-- レポート生成機能
-- Web インターフェース
+- **Role**: 専門家としての役割定義
+- **Context**: 開発の背景と要件
+- **Task**: 具体的な開発手順
+- **Output Format**: 出力形式の指定
+- **Constraints**: 制約条件の明示
 
-以下の手順で段階的に開発してください：
-1. まず、データベース連携機能を実装
-2. 次に、分析アルゴリズムを実装
-3. そして、レポート生成機能を追加
-4. 最後に、Web インターフェースを構築
-</task>
-
-<output_format>
-出力形式：
-- クラスベースの設計
-- 設定可能なパラメータ
-- 詳細なログ出力
-- エラーハンドリング
-- 拡張性のある構造
-</output_format>
-
-<constraints>
-制約：
-- 保守性の高いコード設計
-- 適切なエラーハンドリング
-- メモリ効率の考慮
-- セキュリティの確保
-</constraints>
-
-# 自動生成されるコード例
-class PatentAnalysisTool:
-    def __init__(self):
-        self.api_client = PatentAPIClient()
-        self.llm = OpenAI()
-        self.vectorstore = Chroma()
-
-    def analyze_patent_landscape(self, technology_domain):
-        # 自動生成された分析ロジック
-        patents = self.api_client.search_patents(technology_domain)
-        analysis = self.perform_analysis(patents)
-        report = self.generate_report(analysis)
-        return report
-```
+これにより、保守性が高く、拡張性のあるコードが自動生成されます。
 
 ---
 
@@ -548,7 +501,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 **知財業務での活用例**
 
-詳細は [`code-examples/patent-analysis-system-prompt.py`](../code-examples/patent-analysis-system-prompt.py) を参照してください。
+詳細は [`code-examples/patent-analysis-tool.py`](../code-examples/patent-analysis-tool.py) を参照してください。
 
 ---
 
@@ -607,6 +560,8 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 # コード例: integrated-automation-system.py
 # 詳細は code-examples/integrated-automation-system.py を参照
 ```
+
+---
 
 #### 導入方法
 
@@ -982,6 +937,97 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 #### 知財業務での活用例
 
+**USPTO Patent MCP Server**
+
+[FlowHunt USPTO Patent MCP](https://www.flowhunt.io/integrations/uspto/) ：米国特許商標庁（USPTO）の特許データにアクセスするための MCP サーバー
+
+**主要機能:**
+
+- **特許検索**: USPTO Public Search API を使用した特許・出願の検索
+- **全文取得**: 特許文書の完全なテキスト取得（クレーム、明細書等）
+- **PDF ダウンロード**: USPTO ソースからの直接 PDF 取得
+- **包括的メタデータ**: 特許の書誌情報、譲渡、訴訟データの取得
+- **Claude Desktop 統合**: 安全なローカル分析とレポート生成
+
+---
+
+**利用可能なツール:**
+
+- `ppubs_search_patents`: 特許検索
+- `ppubs_search_applications`: 出願検索
+- `ppubs_get_full_document`: 完全文書取得
+- `get_app_metadata`: メタデータ取得
+- `get_app_assignment`: 譲渡履歴取得
+- `get_app_litigation`: 訴訟データ取得
+
+**知財業務での活用:**
+
+- 先行技術調査の自動化
+- 競合分析の効率化
+- 特許ポートフォリオ管理
+- 技術動向の監視
+
+---
+
+**Google Patents MCP Server**
+
+[Google Patents MCP Server](https://github.com/KunihiroS/google-patents-mcp) ：Google Patents の情報を検索するための MCP サーバー。SerpApi Google Patents API をバックエンドとして使用
+
+**主要機能:**
+
+- **Google Patents 検索**: SerpApi を使用した Google Patents 検索
+- **高度な検索フィルター**: 発明者、譲受人、国、言語、ステータス等での絞り込み
+- **日付フィルター**: 出願日、公開日、優先日での期間指定
+- **ソート機能**: 関連性、新着順、古い順での並び替え
+- **npx 実行**: ローカルインストール不要での直接実行
+
+---
+
+**利用可能なツール:**
+
+- `search_patents`: Google Patents 検索（主要ツール）
+
+**検索パラメータ:**
+
+- `q`: 検索クエリ（必須）
+- `page`: ページ番号
+- `num`: 1 ページあたりの結果数（10-100）
+- `sort`: ソート方法（relevance, new, old）
+- `before/after`: 日付フィルター
+- `inventor`: 発明者名フィルター
+- `assignee`: 譲受人名フィルター
+- `country`: 国コードフィルター
+- `language`: 言語フィルター
+- `status`: ステータスフィルター（GRANT/APPLICATION）
+- `type`: 特許タイプ（PATENT/DESIGN）
+
+---
+
+**知財業務での活用:**
+
+- Google Patents での包括的な特許検索
+- 多言語特許文献の検索
+- 時系列での技術動向分析
+- 特定企業・発明者による特許調査
+
+---
+
+**知財業務での活用:**
+
+(手前味噌で住みませんが)
+Playwright MCP を使って特許調査
+https://www.enlighton.co.jp/post/playwright-mcp%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E7%89%B9%E8%A8%B1%E8%AA%BF%E6%9F%BB
+
+---
+
+- MCP サーバを使った事例・エコシステムは知財分野でもどんどん増えるはず。
+- 欲しい機能を持った MCP に、**言葉で**話しかけるだけで用事が済む
+- A2A でもっと便利に（１人目の Agent に話しかければ全部済む）
+
+---
+
+#### 知財業務での活用例(作ってみる)
+
 **分散特許調査システム**
 
 ```python
@@ -1086,15 +1132,8 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 - **セキュリティ**: セキュアな通信の確保
 - **スケーラビリティ**: 大規模システムへの対応
 
-<img src="../img/img_05_ip_future_vision.png" width="100%">
+---
 
-**組織的課題**
+[Agent Design Catalogue](https://arxiv.org/abs/2405.10467)
 
-- **スキル開発**: 新しい技術スキルの習得
-- **組織文化**: 協調作業を重視する文化の構築
-- **ガバナンス**: 分散システムの適切な管理
-- **リスク管理**: 新技術導入のリスク管理
-
-```
-
-```
+<img src="../img/img_05_ip_future_vision.png" height="80%">

@@ -1,44 +1,71 @@
-# 統合自動化システムの例
-class IntegratedAutomationSystem:
-    def __init__(self):
-        self.claude_code = ClaudeCodeClient()
-        self.cursor = CursorClient()
-        self.gemini_cli = GeminiCliClient()
-        self.scheduler = TaskScheduler()
+# LangGraphを使ってリファクタリングした統合自動化システム
+from typing import TypedDict, List, Dict, Any
+from langgraph.graph import StateGraph, END
 
-    def setup_automation_pipeline(self, requirements):
-        """自動化パイプラインの設定"""
+# --- 1. 状態定義 ---
+class PipelineState(TypedDict):
+    requirements: str
+    system_design: str
+    code_files: List[str]
+    automation_scripts: List[str]
 
-        # 1. Claude Code によるシステム設計
-        system_design = self.claude_code.design_system(requirements)
+# --- 2. ダミーのクライアント ---
+def dummy_claude_code_client(reqs):
+    print("--- ノード: システム設計 (Claude) ---")
+    return f"'{reqs}' に基づくシステム設計書"
 
-        # 2. Cursor によるコード生成
-        code_files = self.cursor.generate_code(system_design)
+def dummy_cursor_client(design):
+    print("--- ノード: コード生成 (Cursor) ---")
+    return ["main.py", "utils.py"]
 
-        # 3. GeminiCli による自動化スクリプト生成
-        automation_scripts = self.gemini_cli.generate_scripts(code_files)
+def dummy_gemini_cli_client(files):
+    print("--- ノード: スクリプト生成 (Gemini) ---")
+    return ["run.sh", "test.sh"]
 
-        # 4. スケジューラーへの登録
-        self.scheduler.register_tasks(automation_scripts)
+def dummy_scheduler(scripts):
+    print("--- ノード: タスク登録 (Scheduler) ---")
+    print(f"{scripts} をスケジューラーに登録しました。")
 
-        return {
-            "system_design": system_design,
-            "code_files": code_files,
-            "automation_scripts": automation_scripts,
-        }
+# --- 3. ノード関数の定義 ---
+def design_system(state: PipelineState):
+    design = dummy_claude_code_client(state["requirements"])
+    return {"system_design": design}
 
-    def monitor_and_optimize(self):
-        """システムの監視と最適化"""
+def generate_code(state: PipelineState):
+    files = dummy_cursor_client(state["system_design"])
+    return {"code_files": files}
 
-        # 性能監視
-        performance_metrics = self.collect_metrics()
+def generate_scripts(state: PipelineState):
+    scripts = dummy_gemini_cli_client(state["code_files"])
+    return {"automation_scripts": scripts}
 
-        # 自動最適化
-        if performance_metrics["efficiency"] < 0.8:
-            optimization_suggestions = self.claude_code.optimize_system(
-                performance_metrics
-            )
-            self.apply_optimizations(optimization_suggestions)
+def register_tasks(state: PipelineState):
+    dummy_scheduler(state["automation_scripts"])
+    return {}
 
-        # レポート生成
-        self.generate_performance_report(performance_metrics)
+# --- 4. グラフの構築 ---
+workflow = StateGraph(PipelineState)
+workflow.add_node("design_system", design_system)
+workflow.add_node("generate_code", generate_code)
+workflow.add_node("generate_scripts", generate_scripts)
+workflow.add_node("register_tasks", register_tasks)
+
+workflow.set_entry_point("design_system")
+workflow.add_edge("design_system", "generate_code")
+workflow.add_edge("generate_code", "generate_scripts")
+workflow.add_edge("generate_scripts", "register_tasks")
+workflow.add_edge("register_tasks", END)
+
+app = workflow.compile()
+
+# --- 5. 実行 ---
+if __name__ == "__main__":
+    print("=== LangGraphによる統合自動化パイプライン デモンストレーション ===\n")
+    
+    requirements = "ユーザー認証機能を持つWebアプリケーション"
+    inputs = {"requirements": requirements}
+    
+    final_state = app.invoke(inputs)
+    
+    print("\n=== パイプライン完了 ===")
+    print(f"最終状態: {final_state}")

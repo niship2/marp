@@ -1,90 +1,103 @@
-# 完全自動化システムの生成プロンプト
-<role>
-あなたは完全自動化システム開発の専門家で、AIと機械学習に精通しています。
-自律的な意思決定と継続的改善を実現するシステム設計を得意としています。
-</role>
+# LangGraphを使ってリファクタリングした完全自動化システム
+import os
+from typing import TypedDict, List, Dict, Any
+from langgraph.graph import StateGraph, END
 
-<context>
-完全自動化された特許分析システムを開発する必要があります。
-データ収集から分析、品質評価、レポート生成、通知まで、人間の介入なしで動作するシステムが求められています。
-</context>
+# --- 1. 状態定義 ---
+class SystemState(TypedDict):
+    new_data: List[str]
+    analysis_results: Dict[str, Any]
+    quality_score: float
+    report: str
+    cycle_count: int
 
-<task>
-以下の要件で完全自動化システムを作成してください：
+# --- 2. ダミーのコンポーネント ---
+def dummy_data_collector():
+    print("--- ノード: データ収集 ---")
+    return ["新しい特許データ1", "新しい特許データ2"]
 
-機能要件：
-- 自動データ収集
-- 自律的分析実行
-- 品質評価と改善
-- レポート自動生成
-- 通知システム
-- 継続的学習
+def dummy_analyzer(data):
+    print("--- ノード: 自動分析 ---")
+    return {"summary": f"{len(data)}件のデータを分析しました。"}
 
-技術要件：
-- Python 3.8以上
-- AI/ML ライブラリ
-- 品質評価システム
-- 通知機能
-- 学習機能
+def dummy_quality_checker(results):
+    print("--- ノード: 品質チェック ---")
+    score = 0.9  # ダミーのスコア
+    print(f"品質スコア: {score}")
+    return score
 
-以下の手順で段階的に開発してください：
-1. まず、データ収集・分析機能を実装
-2. 次に、品質評価システムを実装
-3. そして、自律的改善機能を追加
-4. 最後に、完全自動化ワークフローを構築
-</task>
+def dummy_report_generator(results):
+    print("--- ノード: レポート生成 ---")
+    return f"分析レポート: {results['summary']}"
 
-<output_format>
-出力形式：
-- モジュラー設計
-- 設定可能な品質閾値
-- 詳細なログ出力
-- 学習機能
-- 通知システム
-</output_format>
+def dummy_notification_system(report):
+    print(f"--- ノード: 自動配信 ---")
+    print(f"レポートを配信しました: {report}")
 
-<constraints>
-制約：
-- 完全自律的な動作
-- 継続的な学習と改善
-- 品質管理の自動化
-- エラー時の自動復旧
-</constraints>
+def dummy_learning_module(results, score):
+    print("--- ノード: 学習・改善 ---")
+    print(f"スコア{score}で結果を学習しました。")
 
-# 自動生成されるコード例
-class FullyAutomatedPatentSystem:
-    def __init__(self):
-        self.data_collector = DataCollector()
-        self.analyzer = PatentAnalyzer()
-        self.report_generator = ReportGenerator()
-        self.notification_system = NotificationSystem()
-        self.quality_checker = QualityChecker()
+# --- 3. ノード関数の定義 ---
+def collect_data(state: SystemState):
+    return {"new_data": dummy_data_collector()}
 
-    def automated_workflow(self):
-        """完全自動化ワークフロー"""
-        while True:
-            try:
-                # 1. データ収集
-                new_data = self.data_collector.collect_new_data()
+def analyze_data(state: SystemState):
+    return {"analysis_results": dummy_analyzer(state["new_data"])}
 
-                # 2. 自動分析
-                analysis_results = self.analyzer.analyze_all(new_data)
+def check_quality(state: SystemState):
+    return {"quality_score": dummy_quality_checker(state["analysis_results"])}
 
-                # 3. 品質チェック
-                quality_score = self.quality_checker.check_quality(analysis_results)
+def generate_report(state: SystemState):
+    return {"report": dummy_report_generator(state["analysis_results"])}
 
-                # 4. レポート生成
-                if quality_score > 0.8:  # 品質閾値
-                    report = self.report_generator.generate_report(analysis_results)
+def distribute_report(state: SystemState):
+    dummy_notification_system(state["report"])
+    return {}
 
-                    # 5. 自動配信
-                    self.notification_system.distribute_report(report)
+def learn_from_results(state: SystemState):
+    dummy_learning_module(state["analysis_results"], state["quality_score"])
+    cycle_count = state.get("cycle_count", 0) + 1
+    return {"cycle_count": cycle_count}
 
-                # 6. 学習・改善
-                self.analyzer.learn_from_results(analysis_results, quality_score)
+# --- 4. 条件付きエッジの定義 ---
+def decide_to_generate_report(state: SystemState):
+    return "generate_report" if state["quality_score"] > 0.8 else "learn_from_results"
 
-                time.sleep(3600)  # 1時間待機
+def decide_to_continue(state: SystemState):
+    # デモのため、3サイクルで終了
+    return "collect_data" if state.get("cycle_count", 0) < 3 else END
 
-            except Exception as e:
-                self.notification_system.send_error_notification(e)
-                time.sleep(300)  # エラー時は5分待機
+# --- 5. グラフの構築 ---
+workflow = StateGraph(SystemState)
+workflow.add_node("collect_data", collect_data)
+workflow.add_node("analyze_data", analyze_data)
+workflow.add_node("check_quality", check_quality)
+workflow.add_node("generate_report", generate_report)
+workflow.add_node("distribute_report", distribute_report)
+workflow.add_node("learn_from_results", learn_from_results)
+
+workflow.set_entry_point("collect_data")
+workflow.add_edge("collect_data", "analyze_data")
+workflow.add_edge("analyze_data", "check_quality")
+workflow.add_conditional_edges(
+    "check_quality",
+    decide_to_generate_report,
+    {"generate_report": "generate_report", "learn_from_results": "learn_from_results"}
+)
+workflow.add_edge("generate_report", "distribute_report")
+workflow.add_edge("distribute_report", "learn_from_results")
+workflow.add_conditional_edges(
+    "learn_from_results",
+    decide_to_continue,
+    {"collect_data": "collect_data", END: END}
+)
+
+app = workflow.compile()
+
+# --- 6. 実行 ---
+if __name__ == "__main__":
+    print("=== LangGraphによる完全自動化システム デモンストレーション ===\n")
+    # 初期状態で起動
+    final_state = app.invoke({"cycle_count": 0})
+    print("\n=== ワークフロー完了 ===")

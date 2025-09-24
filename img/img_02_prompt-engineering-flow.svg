@@ -1,0 +1,85 @@
+<svg viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="800" height="700" fill="#f8f9fa"/>
+  
+  <!-- タイトル -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    プロンプトエンジニアリングのフロー
+  </text>
+  
+  <!-- メインフローのボックス -->
+  <!-- 1. タスクと評価基準の定義 -->
+  <rect x="200" y="80" width="400" height="60" rx="8" fill="#e8f4fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="400" y="115" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#1976d2">
+    1. タスクと評価基準の定義
+  </text>
+  
+  <!-- 矢印1 -->
+  <path d="M 400 140 L 400 180" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- 2. テストケースの作成 -->
+  <rect x="200" y="180" width="400" height="60" rx="8" fill="#e8f4fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="400" y="215" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#1976d2">
+    2. テストケースの作成
+  </text>
+  
+  <!-- 矢印2 -->
+  <path d="M 400 240 L 400 280" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- 3. 初期プロンプトの作成 -->
+  <rect x="200" y="280" width="400" height="60" rx="8" fill="#e8f4fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="400" y="315" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#1976d2">
+    3. 初期プロンプトの作成
+  </text>
+  
+  <!-- 矢印3 -->
+  <path d="M 400 340 L 400 380" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- 4. テストケースに対するテスト -->
+  <rect x="200" y="380" width="400" height="60" rx="8" fill="#fff4e6" stroke="#ff9800" stroke-width="2"/>
+  <text x="400" y="415" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#e65100">
+    4. テストケースに対するテスト
+  </text>
+  
+  <!-- 矢印4 -->
+  <path d="M 400 440 L 400 480" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- 5. プロンプトの改良 -->
+  <rect x="200" y="480" width="400" height="60" rx="8" fill="#fff4e6" stroke="#ff9800" stroke-width="2"/>
+  <text x="400" y="515" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#e65100">
+    5. プロンプトの改良
+  </text>
+  
+  <!-- フィードバックループの矢印 -->
+  <path d="M 600 510 Q 680 510, 680 410 Q 680 410, 600 410" 
+        stroke="#4caf50" stroke-width="3" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead-green)"/>
+  
+  <!-- 矢印5 -->
+  <path d="M 400 540 L 400 580" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- 6. 完成したプロンプトの実装 -->
+  <rect x="200" y="580" width="400" height="60" rx="8" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="400" y="615" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#2e7d32">
+    6. 完成したプロンプトの実装
+  </text>
+  
+  <!-- 矢印の定義 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#666"/>
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#4caf50"/>
+    </marker>
+  </defs>
+  
+  <!-- フィードバックループの説明 -->
+  <text x="690" y="460" font-family="Arial, sans-serif" font-size="14" fill="#4caf50">
+    繰り返し
+  </text>
+  
+  <!-- 図番号 -->
+  <text x="400" y="680" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666">
+    図3.3.1 プロンプトエンジニアリングのフロー
+  </text>
+</svg>
