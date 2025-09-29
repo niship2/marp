@@ -18,7 +18,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 - 生成 AI によるコード生成とノーコード開発の 2 つのアプローチ
 - 特許文献一括処理・検索自動化・明細書作成支援の実装事例
-- Dify、n8n、FlowiseAI、LangFlow の活用方法
+- Dify、n8n、FlowiseAI、LangFlow 等 の活用方法
 - プログラミング経験がなくても始められる自動化手法
 - 効果測定と継続的改善のサイクル
 

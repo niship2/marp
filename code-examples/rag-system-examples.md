@@ -16,6 +16,11 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import RetrievalQA
 import chromadb
 
+from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import PDFMinerLoader
+from langchain_core.prompts import PromptTemplate
+
+
 class PatentRAGSystem:
     def __init__(self, openai_api_key: str):
         """特許RAGシステムの初期化"""

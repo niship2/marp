@@ -376,17 +376,9 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
----
-
----
-
----
-
 # コード例: nightly-patent-analysis.py
 
 # 詳細は code-examples/nightly-patent-analysis.py を参照
-
----
 
 ---
 
