@@ -4,6 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
+class: lead
 ---
 
 ## 6. その他資料

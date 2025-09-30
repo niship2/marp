@@ -4,6 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
+class: lead
 ---
 
 ## 4. AI を「業務パートナー」にするための実践的ワークフロー
@@ -24,7 +25,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ---
 
-## 5-1. AI を単なる「便利な検索ツール」で終わらせないために
+## 4-1. AI を単なる「便利な検索ツール」で終わらせないために
 
 #### 従来の AI 活用の限界
 
@@ -71,7 +72,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ---
 
-## 5-2. AI を「業務パートナー」としてチームに迎え入れる
+## 4-2. AI を「業務パートナー」としてチームに迎え入れる
 
 #### 組織文化の変革
 
@@ -116,7 +117,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ---
 
-## 5-3. 知財業務の質と生産性を向上させる新しい業務フロー
+## 4-3. 知財業務の質と生産性を向上させる新しい業務フロー
 
 #### 従来の業務フローの課題
 
@@ -176,7 +177,7 @@ AIパートナーシップフロー：
 
 ---
 
-## 5-3. 自作開発 vs クラウドサービス：RAG・AI Agent の実装アプローチ比較
+## 4-3. 自作開発 vs クラウドサービス：RAG・AI Agent の実装アプローチ比較
 
 #### 開発アプローチの選択指針
 
@@ -228,7 +229,7 @@ AIパートナーシップフロー：
 
 ---
 
-<img src="../img/img_04_rag_system_flow.png" width="100%">
+<img src="../img/img_04_rag_system_flow.png" height="100%">
 
 ---
 
@@ -641,7 +642,7 @@ Data 作成 ⇒ 　自動でベクトル DB 化 ⇒Application 作成へ
 
 ---
 
-## 5-5. クラウドベンダー別 RAG アーキテクチャの比較
+## 4-5. クラウドベンダー別 RAG アーキテクチャの比較
 
 #### 大手クラウドベンダーの RAG サービス比較
 
@@ -814,7 +815,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 ---
 
-## 5-6. 導入戦略 段階的導入アプローチ
+## 4-6. 導入戦略 段階的導入アプローチ
 
 **Phase 1: 基盤構築期（1-3 ヶ月）**
 
@@ -888,7 +889,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 ---
 
-## 5-7. 効果測定と継続的改善 **効果測定のフレームワーク**
+## 4-7. 効果測定と継続的改善 **効果測定のフレームワーク**
 
 **定量的指標**
 
@@ -934,7 +935,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 ---
 
-## 5-8. 将来展望と戦略 **技術トレンドへの対応**
+## 4-8. 将来展望と戦略 **技術トレンドへの対応**
 
 **短期（1-2 年）**
 
@@ -999,7 +1000,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 ---
 
-## 5-9. LangChain/LangGraph の利用 LangChain の基本概念
+## 4-9. LangChain/LangGraph の利用 LangChain の基本概念
 
 **LangChain とは**
 
@@ -1053,7 +1054,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 ---
 
-## 5-10. Google Agent Development Kit の利用
+## 4-10. Google Agent Development Kit の利用
 
 #### Google Agent Development Kit の基本概念
 
@@ -1105,7 +1106,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 ---
 
-## 5-11. MCP/ACP の利用
+## 4-11. MCP/ACP の利用
 
 #### MCP (Model Context Protocol) の基本概念
 
@@ -1308,7 +1309,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 ---
 
-## 5-14. AI Agent デザインパターンの詳細解説
+## 4-14. AI Agent デザインパターンの詳細解説
 
 #### 1. Retrieval Augmented Generation (RAG) / 検索拡張生成
 

@@ -4,6 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
+class: lead
 ---
 
 # 2. プロンプトエンジニアリングの基礎と実践
@@ -3005,7 +3006,7 @@ Anthropic は、プロンプトエンジニアリングからコンテキスト�
 
 ---
 
-# 2-25 [Deep Agents](https://blog.langchain.com/deep-agents/) [39] の深堀りで理解する AI エージェント
+## 2-25 [Deep Agents](https://blog.langchain.com/deep-agents/) [39] の深堀りで理解する AI エージェント
 
 <img src="https://blog.langchain.com/content/images/2025/07/Screenshot-2025-07-30-at-9.08.32-AM.png" height="80%">
 

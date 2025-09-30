@@ -4,6 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
+class: lead
 ---
 
 # 5. 知財業務の自動化への道筋
@@ -22,7 +23,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ---
 
-## 6-1. コーディングアシスタントの活用
+## 5-1. コーディングアシスタントの活用
 
 #### Claude Code
 
@@ -67,7 +68,7 @@ Claude Code を使用した特許分析ツールの自動生成例：
 
 ---
 
-## 6-2. Gemini CLI について
+## 5-2. Gemini CLI について
 
 #### 特徴
 
@@ -139,7 +140,7 @@ gemini setup-monitoring \
 
 ---
 
-## 6-3. Claude Code CLI の活用
+## 5-3. Claude Code CLI の活用
 
 #### Claude Code CLI の基本概念
 
@@ -359,7 +360,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-## 6-4. 寝てる間に進めてもらう(サンプル)
+## 5-4. 寝てる間に進めてもらう(サンプル)
 
 #### 自動化戦略
 
@@ -386,7 +387,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-## 6-5. 自動化システムの構築
+## 5-5. 自動化システムの構築
 
 #### システムアーキテクチャ
 
@@ -397,7 +398,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-## 6-6. 自動化の効果測定
+## 5-6. 自動化の効果測定
 
 #### 定量的効果
 
@@ -419,7 +420,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-## 6-7. AI エージェントのクラウドベンダー比較
+## 5-7. AI エージェントのクラウドベンダー比較
 
 #### 主要クラウドベンダーの AI エージェントサービス
 
@@ -577,7 +578,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-## 6-9. Vellum AI LLM リーダーボードの活用
+## 5-9. Vellum AI LLM リーダーボードの活用
 
 #### Vellum AI リーダーボードの概要
 
@@ -698,7 +699,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-## 6-10. MCP (Model Context Protocol) と A2A (Agent-to-Agent) プロトコル
+## 5-10. MCP (Model Context Protocol) と A2A (Agent-to-Agent) プロトコル
 
 #### MCP と A2A の基本概念
 
