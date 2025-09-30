@@ -452,13 +452,13 @@ RAGシステムは、外部の知識ベースから関連情報を検索し、�
 
 ---
 
-**4.6 参考:RAG システム自作での工夫点~こんなにある** [RAG From Scratch](https://github.com/langchain-ai/rag-from-scratch)
+**4.6 参考:RAG システム自作での工夫点~こんなにある** [RAG From Scratch](https://github.com/langchain-ai/rag-from-scratch) [26]
 
 <img src="../img/img_05_04_RAG_FROMSCRATCH.png" width="65%">
 
 ---
 
-[X の投稿](https://x.com/athleticKoder/status/1968658987756224919)
+[X の投稿](https://x.com/athleticKoder/status/1968658987756224919) [42]
 <img src="../img/img_05_05_X_perplexity.png" width="100%">
 
 ---
@@ -467,24 +467,24 @@ RAGシステムは、外部の知識ベースから関連情報を検索し、�
 
 ---
 
-**クラウドサービス例（AWS Bedrock）**[参考](https://tech.nri-net.com/entry/aws_bedrock_rag_app)
+**クラウドサービス例（AWS Bedrock）**[参考](https://tech.nri-net.com/entry/aws_bedrock_rag_app) [16]
 
 <img src="../img/img_05_04_RAG_AWS.png" width="70%">
 
 ---
 
-**クラウドサービス例（Azure）**[参考](https://business.ntt-east.co.jp/content/cloudsolution/column-628.html)
+**クラウドサービス例（Azure）**[参考](https://business.ntt-east.co.jp/content/cloudsolution/column-628.html) [17]
 <img src="../img/img_05_06_RAG_Azure.png" width="100%">
 
 ---
 
-**クラウドサービス例（GoogleCloud）**[参考](https://cloud.google.com/architecture/ai-ml/generative-ai-rag?hl=ja)
+**クラウドサービス例（GoogleCloud）**[参考](https://cloud.google.com/architecture/ai-ml/generative-ai-rag?hl=ja) [27]
 
 <img src="../img/05_img_07_RAG_Google.png" width="100%">
 
 ---
 
-**クラウドサービス例（Google Vertex AI）**[参考](https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai?hl=ja#2),[参考 2](https://cloud.google.com/architecture/ai-ml/generative-ai-rag?hl=ja)
+**クラウドサービス例（Google Vertex AI）**[参考](https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai?hl=ja#2) [28],[参考 2](https://cloud.google.com/architecture/ai-ml/generative-ai-rag?hl=ja) [27]
 
 <img src="../img/img_05_08_AIAGENT_Google.png" width="70%">
 
@@ -653,7 +653,7 @@ Data 作成 ⇒ 　自動でベクトル DB 化 ⇒Application 作成へ
 | **Azure**        | Azure OpenAI On Your Data          | OpenAI 統合、エンタープライズ向け    |
 | **Google Cloud** | Vertex AI Agent Builder            | Gemini 統合、高度な検索機能          |
 
-**参考**: [G-gen Tech Blog - 生成 AI の RAG 構成を大手 3 社で徹底比較](https://blog.g-gen.co.jp/entry/comparing-rag-architecture-across-cloud-vendors)
+**参考**: [G-gen Tech Blog - 生成 AI の RAG 構成を大手 3 社で徹底比較](https://blog.g-gen.co.jp/entry/comparing-rag-architecture-across-cloud-vendors) [8]
 
 ---
 
@@ -1081,7 +1081,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 ---
 
-#### [参照](https://github.com/niship2/patentsearchagent)
+#### [参照](https://github.com/niship2/patentsearchagent) [29]
 
 <img src="../img/img_5_10_ADK.png" width="70%">
 
@@ -1120,7 +1120,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 <img src="../img/img_05_11_MCP.png" width="90%">
 
-[参照](https://blog.cloudnative.co.jp/27994/)
+[参照](https://blog.cloudnative.co.jp/27994/) [18]
 
 ---
 
@@ -1156,7 +1156,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 #### ACP と MCP の違い
 
 <img src="../img/img_05_12_ACP.png" width="65%">
-[参照](https://qiita.com/okikusan-public/items/196f1a781b3bf33536aa)
+[参照](https://qiita.com/okikusan-public/items/196f1a781b3bf33536aa) [19]
 
 ---
 
@@ -1168,8 +1168,8 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 <img src="../img/img_05_13_AgentDesignPattern.png" height="80%">
 
-- 参考 1:(https://arxiv.org/html/2405.10467v4),
-- 参考 2:(https://qiita.com/Chi_corp_123/items/cf26215878cad285599b)
+- 参考 1:(https://arxiv.org/html/2405.10467v4) [3],
+- 参考 2:(https://qiita.com/Chi_corp_123/items/cf26215878cad285599b) [20]
 
 ---
 

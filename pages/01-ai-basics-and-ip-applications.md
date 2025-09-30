@@ -99,7 +99,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
 今回の資料で使うコード等を github 上に公開しています。
-https://github.com/niship2/marp
+https://github.com/niship2/marp [43]
 
 ---
 
@@ -163,6 +163,8 @@ https://github.com/niship2/marp
 - **アイデア創出**: Temperature=0.8, Top-p=0.9（創造性重視）
 - **技術分析**: Temperature=0.2, Top-p=0.7（論理性重視）
 
+Tempeature については LLM の出力のランダム性について面白い論文が最近でました。
+
 ---
 
 生成 AI モデル情報等の詳細
@@ -172,7 +174,7 @@ https://github.com/niship2/marp
 
 ## 1-1. 生成 AI とは？基本の理解（3）
 
-#### 知財業務での基本的な活用場面
+#### 知財業務での基本的な活用場面(注：他にも色々ありえます)
 
 - **情報収集**: 技術動向の調査・先行技術の検索
 - **文書作成**: 明細書ドラフト・レポート作成
@@ -214,7 +216,7 @@ https://github.com/niship2/marp
 - 前に指示したことは忘れており
 - 指示が曖昧だと暴走する存在
 
-[**生成 AI のよくある誤解を整理して AI の業務活用を推進する**](https://blog.g-gen.co.jp/entry/clearing-up-misconceptions-about-generative-ai)
+[**生成 AI のよくある誤解を整理して AI の業務活用を推進する**](https://blog.g-gen.co.jp/entry/clearing-up-misconceptions-about-generative-ai) [9]
 
 ---
 
@@ -225,7 +227,7 @@ https://github.com/niship2/marp
 **ChatGPT の活用**
 
 ```
-1. https://chat.openai.com にアクセス
+1. https://chat.openai.com [44] にアクセス
 2. アカウント作成（無料版でも十分活用可能）
 3. 質問を入力して回答を取得
 4. 必要に応じて質問を改善・追加
@@ -240,7 +242,7 @@ https://github.com/niship2/marp
 **Claude の活用**
 
 ```
-1. https://claude.ai にアクセス
+1. https://claude.ai [45] にアクセス
 2. アカウント作成
 3. より論理的な分析や法的な内容の質問に活用
 4. 長文の処理に優れている
@@ -255,7 +257,7 @@ https://github.com/niship2/marp
 **Gemini の活用**
 
 ```
-1. https://gemini.google.com にアクセス
+1. https://gemini.google.com [46] にアクセス
 2. Google アカウントでログイン
 3. マルチモーダル機能を活用（テキスト・画像・音声）
 4. 図面や技術資料の分析に特に有効
@@ -267,9 +269,18 @@ https://github.com/niship2/marp
 
 # Google AI Studio
 
-1. https://aistudio.google.com/ にアクセス
+```
+1. https://aistudio.google.com/ [47] にアクセス
 2. Google Cloud のアカウント作成を求められる
-3. アプリ作成（と頒布）に便利。より細やかに LLM のパタメータを制御できる＋アプリをすぐ作ってデプロイまでできる。
+3. アプリ作成（と頒布）に便利。より細やかに LLM のパタメータを制御できる
+4. アプリをすぐ作ってデプロイまでできる。
+```
+
+---
+
+## 他にも色々あります！
+
+<img src="../img/img_01_llms.png" width="100%">
 
 ---
 
@@ -621,8 +632,8 @@ https://github.com/niship2/marp
 
 - 各 LLM 提供社が公式版を出しているのでチェック。
 
-* [プロンプトジェネレータツール比較](https://miralab.co.jp/media/prompt_generator_recommendations/)
-* [知財バージョン/私作成](https://ip-prompt-generator-for-llms-222593271342.us-west1.run.app/)
+* [プロンプトジェネレータツール比較](https://miralab.co.jp/media/prompt_generator_recommendations/) [34]
+* [知財バージョン/私作成](https://ip-prompt-generator-for-llms-222593271342.us-west1.run.app/) [35]
 
 ---
 

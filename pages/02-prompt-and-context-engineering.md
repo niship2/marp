@@ -690,7 +690,7 @@ ReAct は、言語モデルが推論（Reasoning）と行動（Acting）を組�
 
 <img src="../img/02_react_paper.png" width="100%">
 
-[ReAct のもととなった論文](https://arxiv.org/abs/2210.03629)
+[ReAct のもととなった論文](https://arxiv.org/abs/2210.03629) [1]
 
 ---
 
@@ -745,9 +745,9 @@ ReAct は、言語モデルが推論（Reasoning）と行動（Acting）を組�
 
 #### もっとたくさん知りたい方へ
 
-[The Prompt Report: A Systematic Survey of Prompt Engineering Techniques](https://arxiv.org/abs/2406.06608)
-[【プロンプト技術 58 種類の 9 割は「無駄」だった ── プロンプト研究 4,247 本の皮肉な結論】実例 2,000 件から学ぶ！LLM 時代の“強いプロンプトテンプレート”設計術](https://recruit.gmo.jp/engineer/jisedai/blog/prompt_template/)
-[](https://note.com/rami_engineer/n/n8ecd7ac00cc4)
+[The Prompt Report: A Systematic Survey of Prompt Engineering Techniques](https://arxiv.org/abs/2406.06608) [2]
+[【プロンプト技術 58 種類の 9 割は「無駄」だった ── プロンプト研究 4,247 本の皮肉な結論】実例 2,000 件から学ぶ！LLM 時代の"強いプロンプトテンプレート"設計術](https://recruit.gmo.jp/engineer/jisedai/blog/prompt_template/) [10]
+[](https://note.com/rami_engineer/n/n8ecd7ac00cc4) [36]
 [【論文紹介】実例 2,000 件から学ぶ！LLM 時代の“強いプロンプトテンプレート”設計術](https://recruit.gmo.jp/engineer/jisedai/blog/prompt_template/)
 
 ---
@@ -775,7 +775,7 @@ ReAct は、言語モデルが推論（Reasoning）と行動（Acting）を組�
 
 ## 2-7. 従来のプロンプト手法の限界とコグニティブ・デザイン
 
-[参考](https://qiita.com/makotosaekit/items/0eccb562bf7d3f66fbfa)
+[参考](https://qiita.com/makotosaekit/items/0eccb562bf7d3f66fbfa) [11]
 
 #### 「あなたはプロの〇〇です」をもうやめたい
 
@@ -1209,7 +1209,7 @@ Markdown 形式で出力すること
 ---
 
 ウェブ上にもあった特許用のプロンプト例を見てみましょう。
-[参考プロンプト](https://docs.google.com/spreadsheets/d/1bh1X3BGT8x99OSos19TrRpOUQGN9kqhyKK2v-r3tcWI/edit?usp=sharing)
+[参考プロンプト](https://docs.google.com/spreadsheets/d/1bh1X3BGT8x99OSos19TrRpOUQGN9kqhyKK2v-r3tcWI/edit?usp=sharing) [22]
 
 ---
 
@@ -1439,9 +1439,9 @@ LLM へのプロンプトで、マークアップ（`<tag>`のような形式）
 
 #### 参考
 
-[GPT-5 prompting guide](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
-[Claude 4 プロンプトエンジニアリングのベストプラクティス](https://docs.anthropic.com/ja/docs/build-with-claude/prompt-engineering/claude-4-best-practices)
-[Google prompting guide 101](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf)
+[GPT-5 prompting guide](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide) [23]
+[Claude 4 プロンプトエンジニアリングのベストプラクティス](https://docs.anthropic.com/ja/docs/build-with-claude/prompt-engineering/claude-4-best-practices) [24]
+[Google prompting guide 101](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf) [25]
 
 ---
 
@@ -1487,13 +1487,13 @@ AIとの対話において、
 
 ```
 
-[Context Engineering](https://blog.langchain.com/context-engineering-for-agents/)
+[Context Engineering](https://blog.langchain.com/context-engineering-for-agents/) [12]
 
 ---
 
 <img src="../img/img001.png" width="65%">
 
-[参照 1](https://www.promptingguide.ai/guides/context-engineering-guide),[参照 2](https://www.philschmid.de/context-engineering)
+[参照 1](https://www.promptingguide.ai/guides/context-engineering-guide) [13],[参照 2](https://www.philschmid.de/context-engineering) [14]
 
 ---
 
@@ -2189,7 +2189,7 @@ AI の専門性・能力・制約を明確に定義
 新しいマークアップ言語。Microsoftが提唱中
 ```
 
-[参考](https://github.com/microsoft/poml)
+[参考](https://github.com/microsoft/poml) [30]
 
 ---
 
@@ -2549,7 +2549,7 @@ AI の専門性・能力・制約を明確に定義
 
 **参考資料**
 
-- [LLM へのプロンプトを構造化された文書で管理する POML](https://azukiazusa.dev/blog/poml-prompt-structured-document/) - azukiazusa.dev
+- [LLM へのプロンプトを構造化された文書で管理する POML](https://azukiazusa.dev/blog/poml-prompt-structured-document/) [15] - azukiazusa.dev
 
 ---
 
@@ -2714,7 +2714,7 @@ CoT や ToT の一般化したもの。法律系で強いかも。
 
 ---
 
-#### AI エージェントの例：[Baby AGI](https://yoheinakajima.com/task-driven-autonomous-agent-utilizing-gpt-4-pinecone-and-langchain-for-diverse-applications/)
+#### AI エージェントの例：[Baby AGI](https://yoheinakajima.com/task-driven-autonomous-agent-utilizing-gpt-4-pinecone-and-langchain-for-diverse-applications/) [37]
 
 <img src="../img/img_02_task_driven_autonomous_agent.png" width="70%">
 
@@ -2722,7 +2722,7 @@ CoT や ToT の一般化したもの。法律系で強いかも。
 
 **知財業務での実践例**
 
-- **特許調査エージェント**: 技術キーワード抽出 → 検索実行 → 関連性評価 → レポート生成 [参考](https://github.com/niship2/patentsearchagent)
+- **特許調査エージェント**: 技術キーワード抽出 → 検索実行 → 関連性評価 → レポート生成 [参考](https://github.com/niship2/patentsearchagent) [29]
 - **競合分析エージェント**: 競合他社特定 → 技術動向分析 → リスク評価 → 戦略提案
 
 ---
@@ -2731,7 +2731,7 @@ CoT や ToT の一般化したもの。法律系で強いかも。
 
 <img src="../img/img_02_ai_agent_business.png" width="100%">
 
-[『現場で活用するための AI エージェント実践入門』](https://www.kspub.co.jp/book/detail/5401408.html)「AI エージェントのビジネス状況」章を参照し編集
+[『現場で活用するための AI エージェント実践入門』](https://www.kspub.co.jp/book/detail/5401408.html) [38]「AI エージェントのビジネス状況」章を参照し編集
 
 ---
 
@@ -2852,11 +2852,164 @@ Isolate Context:
 
 ---
 
-# 2-24 [Deep Agents](https://blog.langchain.com/deep-agents/) の深堀りで理解する AI エージェント
+## 2-24. Anthropic のコンテキストエンジニアリング戦略
+
+#### コンテキストエンジニアリングの重要性
+
+**Anthropic の最新アプローチ**
+
+Anthropic は、プロンプトエンジニアリングからコンテキストエンジニアリングへの進化を提唱
+
+**コンテキストエンジニアリングとは**
+
+- **有限リソースの最適化**: LLM の限られたコンテキストウィンドウを最大限活用
+- **高品質トークンの選択**: 最も関連性の高い情報を選択
+- **動的な情報管理**: 状況に応じた情報の動的調整
+
+---
+
+## 2-24. Anthropic のコンテキストエンジニアリング戦略（1）
+
+#### コンテキストエンジニアリングの基本原則
+
+**1. 最小限の高品質トークン**
+
+```
+目標: 最小限のトークンで最大の効果を実現
+- 関連性の高い情報のみを選択
+- 冗長な情報の排除
+- 明確で直接的な表現の使用
+```
+
+**2. システムプロンプトの最適化**
+
+```
+適切な高度での指示:
+- 過度に複雑なロジックの回避
+- 曖昧な高レベル指示の回避
+- 具体的で実用的なガイダンスの提供
+```
+
+---
+
+## 2-24. Anthropic のコンテキストエンジニアリング戦略（2）
+
+#### 効果的なコンテキストの構成要素
+
+**システムプロンプト**
+
+- **明確性**: シンプルで直接的な言語の使用
+- **適切な高度**: 具体的すぎず、曖昧すぎない指示
+- **構造化**: 明確なセクション分け（背景、指示、制約等）
+
+**ツール設計**
+
+- **効率性**: トークン効率の良い情報返却
+- **明確性**: 用途が明確で重複のないツール
+- **自己完結性**: 独立して動作するツール設計
+
+---
+
+## 2-24. Anthropic のコンテキストエンジニアリング戦略（3）
+
+#### 長期間タスクのためのコンテキスト管理
+
+**1. コンパクション（圧縮）**
+
+```
+目的: コンテキストウィンドウの限界に対処
+方法:
+- 対話履歴の要約
+- 重要な情報の保持
+- 冗長な情報の削除
+```
+
+**2. 構造化されたメモ取り**
+
+```
+目的: コンテキスト外での情報保持
+方法:
+- 外部メモリへの重要情報保存
+- 後続の対話での情報活用
+- 進捗状況の追跡
+```
+
+---
+
+## 2-24. Anthropic のコンテキストエンジニアリング戦略（4）
+
+#### 長期間タスクのためのコンテキスト管理（続き）
+
+**3. サブエージェントアーキテクチャ**
+
+```
+目的: コンテキスト制限の回避
+方法:
+- 専門化されたサブエージェントの活用
+- 各サブエージェントでの詳細作業
+- 結果の統合と要約
+```
+
+**4. エージェント検索**
+
+```
+目的: 必要な情報の動的取得
+方法:
+- 事前計算された情報の活用
+- ランタイムでの情報探索
+- ハイブリッドアプローチの採用
+```
+
+---
+
+## 2-24. Anthropic のコンテキストエンジニアリング戦略（5）
+
+#### 知財業務での実践例
+
+**特許調査エージェントでの適用**
+
+```
+コンテキスト設計:
+1. 役割設定: 特許調査専門家としての明確な定義
+2. 背景情報: 調査対象技術の詳細
+3. ツール統合: 特許データベース、分析ツール
+4. メモリ管理: 調査履歴の外部保存
+5. サブエージェント: 技術分野別の専門エージェント
+```
+
+---
+
+**効果的なコンテキスト管理**
+
+- **Write Context**: 調査メモの外部保存
+- **Select Context**: 関連特許文献の動的選択
+- **Compress Context**: 長い特許明細書の要約
+- **Isolate Context**: 技術分野別のコンテキスト分離
+
+---
+
+## 2-24. Anthropic のコンテキストエンジニアリング戦略（6）
+
+#### 実装のベストプラクティス
+
+**段階的アプローチ**
+
+```
+1. 最小限のプロンプトから開始
+2. 失敗パターンの分析
+3. 明確な指示と例の追加
+4. 継続的な改善
+```
+
+**参考資料**: [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)[53]
+
+---
+
+# 2-25 [Deep Agents](https://blog.langchain.com/deep-agents/) [39] の深堀りで理解する AI エージェント
 
 <img src="https://blog.langchain.com/content/images/2025/07/Screenshot-2025-07-30-at-9.08.32-AM.png" height="80%">
 
 ---
 
-[無料のコース](https://academy.langchain.com/courses/deep-agents-with-langgraph)も見てみてください。AI エージェントが何なのかよくわかります
-今回は[眺めるだけ](https://github.com/langchain-ai/deep-agents-from-scratch/blob/main/notebooks/4_full_agent.ipynb)ですが、参考になります。
+[無料のコース](https://academy.langchain.com/courses/deep-agents-with-langgraph) [40]も見てみてください。AI エージェントが何なのかよくわかります
+今回は[眺めるだけ](https://github.com/langchain-ai/deep-agents-from-scratch/blob/main/notebooks/4_full_agent.ipynb) [41]ですが、参考になります。

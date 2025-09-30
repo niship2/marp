@@ -423,7 +423,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 #### 主要クラウドベンダーの AI エージェントサービス
 
-出典:[生成 AI の AI エージェントを大手 3 社（AWS、Azure、Google Cloud）で徹底比較してみた](https://blog.g-gen.co.jp/entry/comparing-agent-architecture-across-cloud-vendors)
+出典:[生成 AI の AI エージェントを大手 3 社（AWS、Azure、Google Cloud）で徹底比較してみた](https://blog.g-gen.co.jp/entry/comparing-agent-architecture-across-cloud-vendors) [7]
 
 ---
 
@@ -581,7 +581,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 #### Vellum AI リーダーボードの概要
 
-出典: [Vellum AI LLM Leaderboard](https://www.vellum.ai/llm-leaderboard)
+出典: [Vellum AI LLM Leaderboard](https://www.vellum.ai/llm-leaderboard) [21]
 
 **最新の LLM 性能比較**
 
@@ -755,7 +755,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 **USPTO Patent MCP Server**
 
-[FlowHunt USPTO Patent MCP](https://www.flowhunt.io/integrations/uspto/) ：米国特許商標庁（USPTO）の特許データにアクセスするための MCP サーバー
+[FlowHunt USPTO Patent MCP](https://www.flowhunt.io/integrations/uspto/) [32] ：米国特許商標庁（USPTO）の特許データにアクセスするための MCP サーバー
 
 **主要機能:**
 
@@ -787,7 +787,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 **Google Patents MCP Server**
 
-[Google Patents MCP Server](https://github.com/KunihiroS/google-patents-mcp) ：Google Patents の情報を検索するための MCP サーバー。SerpApi Google Patents API をバックエンドとして使用
+[Google Patents MCP Server](https://github.com/KunihiroS/google-patents-mcp) [33] ：Google Patents の情報を検索するための MCP サーバー。SerpApi Google Patents API をバックエンドとして使用
 
 **主要機能:**
 
@@ -832,7 +832,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 (手前味噌で住みませんが)
 Playwright MCP を使って特許調査
-https://www.enlighton.co.jp/post/playwright-mcp%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E7%89%B9%E8%A8%B1%E8%AA%BF%E6%9F%BB
+https://www.enlighton.co.jp/post/playwright-mcp%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E7%89%B9%E8%A8%B1%E8%AA%BF%E6%9F%BB [31]
 
 ---
 
@@ -950,6 +950,6 @@ https://www.enlighton.co.jp/post/playwright-mcp%E3%82%92%E4%BD%BF%E3%81%A3%E3%81
 
 ---
 
-[Agent Design Catalogue](https://arxiv.org/abs/2405.10467)
+[Agent Design Catalogue](https://arxiv.org/abs/2405.10467)ーどんな AI エージェントアーキテクチャがあるか
 
-<img src="../img/img_05_ip_future_vision.png" height="80%">
+<img src="../img/img_05_ip_future_vision.png" height="100%">
