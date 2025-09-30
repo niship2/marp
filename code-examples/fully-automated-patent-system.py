@@ -1,4 +1,4 @@
-# LangGraphを使ってリファクタリングした完全自動化システム
+# LangGraphを使ってリファクタリングした自動化システム
 import os
 from typing import TypedDict, List, Dict, Any
 from langgraph.graph import StateGraph, END
@@ -97,7 +97,7 @@ app = workflow.compile()
 
 # --- 6. 実行 ---
 if __name__ == "__main__":
-    print("=== LangGraphによる完全自動化システム デモンストレーション ===\n")
+    print("=== LangGraphによる自動化システム デモンストレーション ===\n")
     # 初期状態で起動
     final_state = app.invoke({"cycle_count": 0})
     print("\n=== ワークフロー完了 ===")

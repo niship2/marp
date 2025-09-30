@@ -58,6 +58,8 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 5. 創造的協働: 新たな可能性の探索
 ```
 
+---
+
 **従来のツール活用との違い**
 
 | 項目       | 従来のツール活用 | AI パートナーシップ |
@@ -208,6 +210,10 @@ AIパートナーシップフロー：
 
 ---
 
+<H2>事例:RAGシステムの構築</h2>
+
+---
+
 #### 自作開発アプローチの詳細
 
 **使用する主要ライブラリ・フレームワーク**
@@ -218,9 +224,15 @@ AIパートナーシップフロー：
    - Chroma/Pinecone: ベクトルデータベース
    - OpenAI Embeddings: テキストベクトル化
    - FAISS: 高速類似度検索
+```
+
+---
 
 <img src="../img/img_04_rag_system_flow.png" width="100%">
 
+---
+
+```
 2. AI Agent 開発
    - LangGraph: ワークフロー管理
    - AutoGen: マルチエージェントシステム
@@ -355,7 +367,7 @@ AIパートナーシップフロー：
 
 #### 4. 実装ステップとサンプルコード
 
-**より手軽に始められる FAISS と Chroma を使った実装例**
+**自作開発例 1 FAISS と Chroma を使った実装例**
 **4.1. 環境構築**
 
 まず、必要なライブラリをインストールする。
@@ -420,10 +432,17 @@ RAGシステムは、外部の知識ベースから関連情報を検索し、�
 
 ---
 
+**自作開発例 2（LangGraph + AutoGen）**
+
+> **コード例**: [`code-examples/custom-patent-agent.py`](../code-examples/custom-patent-agent.py)を参照
+> **コード使用例**: `code-examples/custom-patent-agent-usage.py`を参照
+
+---
+
 **4.5. まとめ**
 
 - 今回提示した技術スタックを利用することで、自由に RAG システムを構築可能
-- 市販品や RAG システムでは制御できない部分まで制御可能
+- 市販品やクラウドベンダー RAG システムでは**制御できない部分まで制御**可能
 
 * **LangChain** が全体のパイプライン（データ読み込み、分割、LLM 連携）を管理する。
 * **OpenAI Embeddings** がテキストの意味を捉えるためのベクトルを生成する。
@@ -441,6 +460,10 @@ RAGシステムは、外部の知識ベースから関連情報を検索し、�
 
 [X の投稿](https://x.com/athleticKoder/status/1968658987756224919)
 <img src="../img/img_05_05_X_perplexity.png" width="100%">
+
+---
+
+<h2> クラウドサービスでRAGシステムを構築 </h2>
 
 ---
 
@@ -472,16 +495,6 @@ RAGシステムは、外部の知識ベースから関連情報を検索し、�
 Data 作成 ⇒ 　自動でベクトル DB 化 ⇒Application 作成へ
 
 <img src="../img/img_05_14_GoogleAIApplications.png" width="70%">
-
----
-
-**自作開発例（LangGraph + AutoGen）**
-
-> **コード例**: [`code-examples/custom-patent-agent.py`](../code-examples/custom-patent-agent.py)を参照
-
----
-
-> **コード例**: `code-examples/custom-patent-agent-usage.py`を参照
 
 ---
 
@@ -734,17 +747,13 @@ Data 作成 ⇒ 　自動でベクトル DB 化 ⇒Application 作成へ
 
 ---
 
-#### LangChain を使用した RAG システムの構築例
-
-<img src="../img/ima_05_03_RAG_flow.png" height="100%">
+#### LangChain を使用した **高度な**RAG システムの構築例
 
 ---
 
 **特許文献検索・分析システム**
 
 > **コード例**: `code-examples/patent-rag-system.py`を参照
-
----
 
 # 使用例
 
@@ -952,7 +961,7 @@ Multi-Query の考え方をさらに発展させ、検索結果の「再ラン�
 
 ```
 1. 自律的AI
-   - 完全自動化された業務実行
+   - 自動化された業務実行
    - 自己学習・自己改善
    - 創造的な問題解決
 

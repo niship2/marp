@@ -6,19 +6,17 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-# 5. 知財業務の完全自動化への道筋
+# 5. 知財業務の自動化への道筋
 
 ---
 
-## 5. 完全自動化への道筋 - 概要
+## 5. 自動化への道筋 - 概要
 
 #### この章で学ぶこと
 
 **主なトピック:**
 
 - Claude Code、Cursor、Devin 等コーディングアシスタントの活用
-- GeminiCLI、Claude Code CLI ,OpenAI Codex による夜間バッチ処理システム構築
-- 完全自動化システムの 3 段階レベルと実装戦略
 - クラウドベンダー別 AI エージェント比較と Vellum AI LLM リーダーボード活用
 - MCP（Model Context Protocol）と A2A（Agent-to-Agent）プロトコル
 
@@ -67,11 +65,9 @@ Claude Code を使用した特許分析ツールの自動生成例：
 - **Output Format**: 出力形式の指定
 - **Constraints**: 制約条件の明示
 
-これにより、保守性が高く、拡張性のあるコードが自動生成されます。
-
 ---
 
-## 6-2. GeminiCli について
+## 6-2. Gemini CLI について
 
 #### 特徴
 
@@ -205,7 +201,8 @@ claude-code config --framework flask
 ```bash
 # 特許分析スクリプトの生成（Claude API使用例）
 claude --prompt "特許文献を分析するPythonスクリプトを作成してください。\
-PDFファイルを読み込み、テキストを抽出し、キーワード分析を行い、結果をCSVファイルに出力する機能が必要です。" > patent_analyzer.py
+PDFファイルを読み込み、テキストを抽出し、キーワード分析を行い、
+結果をCSVファイルに出力する機能が必要です。" > patent_analyzer.py
 
 # 生成されたスクリプトの実行
 python patent_analyzer.py --input patents/ --output results/
@@ -217,11 +214,13 @@ python patent_analyzer.py --input patents/ --output results/
 
 ```bash
 # 既存の特許検索スクリプトを改善（Claude API使用例）
-claude --prompt "以下のファイルのエラーハンドリングを追加し、ログ機能を実装し、パフォーマンスを最適化してください。\
+claude --prompt "以下のファイルのエラーハンドリングを追加し、
+ログ機能を実装し、パフォーマンスを最適化してください。
 " --file patent_search.py > improved_patent_search.py
 
 # 特定の関数を改善
-claude --prompt "search_patents関数の検索精度を向上させ、結果の並び替え機能を追加してください。\
+claude --prompt "search_patents関数の検索精度を向上させ、
+結果の並び替え機能を追加してください。\
 " --file patent_search.py > optimized_patent_search.py
 ```
 
@@ -236,7 +235,8 @@ claude --prompt "search_patents関数の検索精度を向上させ、結果の�
 tree ./patent-analysis-system > project_structure.txt
 
 # 改善提案の生成（Claude API使用例）
-claude --prompt "以下のプロジェクト構造を分析し、パフォーマンス、セキュリティ、保守性の観点から改善提案をしてください。\
+claude --prompt "以下のプロジェクト構造を分析し、パフォーマンス、
+セキュリティ、保守性の観点から改善提案をしてください。\
 " --file project_structure.txt > analysis_report.md
 ```
 
@@ -246,7 +246,8 @@ claude --prompt "以下のプロジェクト構造を分析し、パフォーマ
 
 ```bash
 # 既存コードに対するテストの生成（Claude API使用例）
-claude --prompt "patent_analyzer.pyのテストコードをpytestフレームワークで作成してください。\
+claude --prompt "patent_analyzer.pyのテストコードを
+pytestフレームワークで作成してください。\
  --file patent_analyzer.py > test_patent_analyzer.py
 
 # テストの実行
@@ -376,12 +377,6 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-# コード例: nightly-patent-analysis.py
-
-# 詳細は code-examples/nightly-patent-analysis.py を参照
-
----
-
 #### 注意点
 
 - **品質管理**: 自動処理結果の確認・検証システムの構築
@@ -391,7 +386,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-## 6-5. 完全自動化システムの構築
+## 6-5. 自動化システムの構築
 
 #### システムアーキテクチャ
 
@@ -424,168 +419,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-#### 効果測定例
-
-```python
-# コード例: automation-effectiveness.py
-# 詳細は code-examples/automation-effectiveness.py を参照
-```
-
----
-
-## 6-7. 将来展望と課題
-
-#### 技術的展望
-
-<img src="../img/img_05_ai_evolution_timeline.png" width="100%">
-
-**短期（1-2 年）**
-
-- **AGI の進歩**: より高度な自律的処理の実現
-- **マルチモーダル対応**: 画像・音声・動画の統合処理
-- **リアルタイム処理**: 即座の応答と分析
-- **エッジコンピューティング**: ローカルでの高速処理
-
-**中期（3-5 年）**
-
-- **完全自律システム**: 人間の介入なしでの運用
-- **予測分析**: 将来の技術動向・リスク予測
-- **創造的 AI**: 新規発明・技術の創出支援
-- **量子コンピューティング**: 超高速計算による分析
-
-#### 課題と対策
-
-**技術的課題**
-
-- **精度向上**: 継続的な学習・改善
-- **セキュリティ**: 高度なセキュリティ対策
-- **スケーラビリティ**: 大規模システム対応
-- **信頼性**: システムの安定性確保
-
-**社会的課題**
-
-- **雇用への影響**: 新しい役割の創出・スキルアップ
-- **倫理的配慮**: AI の意思決定の透明性
-- **法的規制**: AI 利用に関する法整備
-- **プライバシー**: 個人情報保護の強化
-
-**組織的課題**
-
-- **変化管理**: 組織文化の変革
-- **スキル開発**: AI 活用スキルの向上
-- **ガバナンス**: AI 利用の適切な管理
-- **リスク管理**: AI リスクの特定・対策
-
----
-
-## 6-8. Claude Code、Cursor、GeminiCli 等による自動化
-
-#### Claude Code の活用
-
-**Claude Code の特徴**
-
-- **高度なコード生成**: 複雑なロジックの自動生成
-- **コンテキスト理解**: プロジェクト全体の理解
-- **デバッグ支援**: エラーの自動修正と最適化
-- **ドキュメント生成**: コードの自動ドキュメント化
-
----
-
-**知財業務での活用例**
-
-詳細は [`code-examples/patent-analysis-tool.py`](../code-examples/patent-analysis-tool.py) を参照してください。
-
----
-
-#### Cursor の活用
-
-**Cursor の特徴**
-
-- **IDE 統合**: 開発環境での直接支援
-- **リアルタイム支援**: コード作成の即座の支援
-- **学習機能**: プロジェクト固有の学習
-- **リファクタリング**: 自動的なコード改善
-
----
-
-**知財業務での活用例**
-
-```python
-# コード例: patent-data-processor.py
-# 詳細は code-examples/patent-data-processor.py を参照
-```
-
----
-
-#### GeminiCli の活用
-
-**GeminiCli の特徴**
-
-- **コマンドライン統合**: ターミナルからの直接利用
-- **スクリプト自動化**: シェルスクリプトの自動生成
-- **システム管理**: システム設定の自動化
-- **バッチ処理**: 大量データの一括処理
-
----
-
-#### OpenAI Codex の活用
-
-**Codex の特徴**
-
-- **コマンドライン統合**: ターミナルからの直接利用
-- **スクリプト自動化**: シェルスクリプトの自動生成
-
----
-
-**知財業務での活用例**
-
-```bash
-# コード例: gemini-cli-patent-monitoring.sh
-# 詳細は code-examples/gemini-cli-patent-monitoring.sh を参照
-```
-
-#### 統合的な自動化システム
-
-**複数ツールの連携**
-
-```python
-# コード例: integrated-automation-system.py
-# 詳細は code-examples/integrated-automation-system.py を参照
-```
-
----
-
-#### 導入方法
-
-**段階的な導入**
-
-1. **準備フェーズ**
-
-   - ツールのインストールと設定
-   - 基本的な使用方法の習得
-   - 小規模なテストの実施
-
-2. **実装フェーズ**
-
-   - 特定業務の自動化
-   - 効果測定の実施
-   - 改善の継続
-
-3. **拡張フェーズ**
-   - 複数業務の統合
-   - 高度な自動化の実現
-   - 組織全体への展開
-
-**効果測定と改善**
-
-- **定量的指標**: 処理時間、処理量、精度、コスト
-- **定性的指標**: 品質向上、一貫性、満足度
-- **継続的改善**: 定期的な評価と改善の実施
-- **ベストプラクティス**: 成功パターンの蓄積と共有
-
----
-
-## 6-4. AI エージェントのクラウドベンダー比較
+## 6-7. AI エージェントのクラウドベンダー比較
 
 #### 主要クラウドベンダーの AI エージェントサービス
 
@@ -617,7 +451,10 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 **対応モデル**
 
-- **GPT-4o**: 最新の高性能モデル
+- **GPT-4.1**: 最新の高性能モデル（2025 年 4 月リリース）
+- **o1-pro**: 高度な推論能力を持つ最新モデル（2025 年 3 月リリース）
+- **GPT-4o**: 高性能なマルチモーダルモデル
+- **GPT-4o mini**: コスト効率を重視した軽量モデル
 - **GPT-4 Turbo**: バランスの取れた性能
 - **GPT-3.5 Turbo**: コスト効率重視
 
@@ -632,12 +469,6 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 - **セキュリティ**: エンタープライズレベルのセキュリティ
 - **スケーラビリティ**: 大規模システムへの対応
 
-**料金体系**
-
-- **GPT-4o**: 入力 $0.0025/1K、出力 $0.01/1K
-- **GPT-4 Turbo**: 入力 $0.01/1K、出力 $0.03/1K
-- **GPT-3.5 Turbo**: 入力 $0.0005/1K、出力 $0.0015/1K
-
 ---
 
 #### Vertex AI Agents（Google Cloud）
@@ -651,9 +482,8 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 **対応モデル**
 
-- **Gemini 1.5 Pro**: 最新の高性能モデル
-- **Gemini 1.5 Flash**: 高速処理重視
-- **Gemini 1.0 Pro**: 安定性重視
+- **Gemini 2.5 Pro**: 最新の高性能モデル
+- **Gemini 2.5 Flash**: 高速処理重視
 
 ---
 
@@ -666,12 +496,6 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 - **高度なツール連携**: カスタムツールの開発・統合
 - **セキュリティ**: エンタープライズレベルのセキュリティ
 - **スケーラビリティ**: 大規模システムへの対応
-
-**料金体系**
-
-- **Gemini 2.5 Pro**: 入力 $0.0035/1K、出力 $0.0105/1K
-- **Gemini 2.5 Flash**: 入力 $0.000075/1K、出力 $0.0003/1K
-- **Gemini 1.5 Pro**: 入力 $0.0035/1K、出力 $0.0105/1K
 
 ---
 
