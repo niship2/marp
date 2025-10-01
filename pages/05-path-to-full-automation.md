@@ -578,7 +578,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-## 5-9. Vellum AI LLM リーダーボードの活用
+## 5-8. Vellum AI LLM リーダーボードの活用
 
 #### Vellum AI リーダーボードの概要
 
@@ -699,7 +699,7 @@ claude --prompt "以下のコード品質レポートを基に、patent_analyzer
 
 ---
 
-## 5-10. MCP (Model Context Protocol) と A2A (Agent-to-Agent) プロトコル
+## 5-9. MCP (Model Context Protocol) と A2A (Agent-to-Agent) プロトコル
 
 #### MCP と A2A の基本概念
 
