@@ -1009,174 +1009,52 @@ Markdown 形式で出力すること
 
 ---
 
-## 2-8-1. DSPyによるプロンプトの自動最適化
+## 2-8-1. DSPy によるプロンプトの自動最適化
 
-#### DSPyの基本概念
+#### DSPy の基本概念
 
-**DSPyとは**
+**DSPy とは**
 
-DSPyは、手動のプロンプトエンジニアリングを排除し、プロンプトを自動的に最適化するフレームワークです。ディープラーニングのフレームワークであるPyTorchに強く影響を受けた設計思想を持ちます。
+DSPy は、手動のプロンプトエンジニアリングを排除し、プロンプトを自動的に最適化するフレームワーク
 
 **核心的な発想**
 
 - **プロンプトを訓練する**: 人手でのプロンプトエンジニアリングを、プログラム可能な最適化問題に落とし込む
 - **教師データで最適化**: プロンプトをパラメータとして扱い、教師データで訓練して最適化
-- **PyTorchライクな使い心地**: プログラムの書き心地がPyTorchやChainerに似ている
+- **PyTorch ライクな使い心地**: プログラムの書き心地が PyTorch や Chainer に似ている
 
 ---
 
-## 2-8-1. DSPyによるプロンプトの自動最適化（2）
+## 2-8-1. DSPy によるプロンプトの自動最適化（2）
 
 #### ディープラーニングとの類似性
 
 **アナロジー**
 
-| ディープラーニング | DSPy（プロンプト最適化） |
-| ------------------ | ------------------------ |
+| ディープラーニング             | DSPy（プロンプト最適化）           |
+| ------------------------------ | ---------------------------------- |
 | 人手での特徴量エンジニアリング | 人手でのプロンプトエンジニアリング |
-| 中間層として学習 | 調整可能プロンプトとして学習 |
-| 微分可能な計算グラフ | プログラム可能なプロンプト構造 |
+| 中間層として学習               | 調整可能プロンプトとして学習       |
+| 微分可能な計算グラフ           | プログラム可能なプロンプト構造     |
+
+---
 
 **重要なポイント**
 
-- ディープラーニングが特徴量エンジニアリングを排除したように、DSPyはプロンプトエンジニアリングを自動化する可能性を秘めている
+- ディープラーニングが特徴量エンジニアリングを排除したように、DSPy はプロンプトエンジニアリングを自動化する可能性を秘めている
 - 現状、手動のプロンプトエンジニアリングが完全に不要になったわけではないが、大きな可能性を感じさせる
 
 ---
 
-## 2-8-1. DSPyによるプロンプトの自動最適化（3）
+## 2-8-1. DSPy によるプロンプトの自動最適化（3）
 
-#### DSPyの基本的な使い方
+#### DSPy の基本的な使い方等
 
-**1. モデルの作成**
-
-```python
-import dspy
-
-class NarutoTransform(dspy.Signature):
-    """丁寧な文をナルト口調に変換する"""
-    polite_sentence: str = dspy.InputField()
-    rationale: str = dspy.OutputField(desc="変換の意図やねらいの説明")
-    transformed: str = dspy.OutputField(desc="ナルト口調に書き換えた文")
-
-# チェーンの作成
-make_naruto_chain = dspy.ChainOfThought(NarutoTransform)
-```
-
-**2. 最適化前の出力**
-
-```python
-polite_sentence = "今日の会議では議論を丁寧にまとめます。"
-response = make_naruto_chain(polite_sentence=polite_sentence)
-print(f'生成推論: {response.rationale}')
-print(f'生成出力: {response.transformed}')
-```
+code-examples/dspy-prompt-optimization.py 　参照
 
 ---
 
-## 2-8-1. DSPyによるプロンプトの自動最適化（4）
-
-#### 教師データの作成と最適化
-
-**3. 教師データ相当の作成**
-
-```python
-# 訓練データの準備
-trainset = [
-    dspy.Example(
-        polite_sentence="会議の議事録を作成します。",
-        rationale="ナルトの特徴的なフレーズ「ってばよ」を活用し、親しみやすい表現に変換",
-        transformed="会議の議事録を作るってばよ！"
-    ),
-    # 複数の例を追加...
-]
-```
-
-**4. 評価指標の設定**
-
-```python
-def naruto_quality_score(example, pred, trace=None):
-    # ナルトらしさを評価する指標
-    score = 0
-    if "ってばよ" in pred.transformed:
-        score += 1
-    if "オレ" in pred.transformed or "おれ" in pred.transformed:
-        score += 1
-    # その他の評価基準...
-    return score
-```
-
----
-
-## 2-8-1. DSPyによるプロンプトの自動最適化（5）
-
-#### 最適化アルゴリズム
-
-**5. COPRO（Collaborative Prompt Optimization）**
-
-```python
-from dspy.teleprompt import COPRO
-
-# COPROによる最適化
-copro_optimizer = COPRO(
-    metric=naruto_quality_score,
-    breadth=10,
-    depth=3,
-    init_temperature=1.0
-)
-
-copro_compiled = copro_optimizer.compile(
-    student=make_naruto_chain,
-    trainset=trainset
-)
-```
-
-**6. GEPA（Genetic Evolution for Prompt Adaptation）**
-
-```python
-from dspy.teleprompt import GEPA
-
-# GEPAによる最適化
-gepa_optimizer = GEPA(
-    metric=naruto_quality_score,
-    num_candidates=20,
-    init_temperature=1.0
-)
-
-gepa_compiled = gepa_optimizer.compile(
-    student=make_naruto_chain,
-    trainset=trainset
-)
-```
-
----
-
-## 2-8-1. DSPyによるプロンプトの自動最適化（6）
-
-#### 訓練前後の比較
-
-**訓練前の出力例**
-
-```
-生成推論: ナルトは、友達や仲間に対してフレンドリーでカジュアルな言葉遣いをするキャラクターです。
-生成出力: 今日の会議では議論を丁寧にまとめるよ。でもさ、みんなの意見もちゃんと聞かないとね！
-```
-
-**訓練後の出力例（GEPA最適化後）**
-
-```
-生成推論: ナルトの喋り方には、オレという一人称や「ってばよ」といった特徴的なフレーズが含まれています。
-生成出力: 今日の会議では議論を丁寧にまとめるってばよ！でもさ、みんなの意見も大事だから、しっかり聞くぜ！
-```
-
-**改善点**
-
-- よりナルトらしい表現（「ってばよ」「オレ」「ぜ」）の使用
-- キャラクターの個性をより正確に反映
-
----
-
-## 2-8-1. DSPyによるプロンプトの自動最適化（7）
+## 2-8-1. DSPy によるプロンプトの自動最適化（4）
 
 #### 知財業務での活用可能性
 
@@ -1187,6 +1065,8 @@ gepa_compiled = gepa_optimizer.compile(
 - **明細書のドラフト作成**: 特定のスタイルガイドに準拠した文書生成
 - **分析レポートの作成**: 統一されたフォーマットでのレポート生成
 
+---
+
 **期待される効果**
 
 - **一貫性の向上**: 複数のプロンプトで一貫した出力形式
@@ -1196,26 +1076,10 @@ gepa_compiled = gepa_optimizer.compile(
 
 ---
 
-## 2-8-1. DSPyによるプロンプトの自動最適化（8）
-
-#### 導入時の考慮事項
-
-**技術的考慮事項**
-
-- **教師データの準備**: 十分な量と質の訓練データが必要
-- **評価指標の設計**: 業務に適した評価指標の設定が重要
-- **最適化アルゴリズムの選択**: COPRO、GEPAなど、タスクに適したアルゴリズムの選択
-
-**組織的考慮事項**
-
-- **データの蓄積**: 過去の事例や成功パターンの蓄積が重要
-- **スキル開発**: DSPyの使い方の習得
-- **段階的導入**: 小さなタスクから始めて徐々に拡大
-
 **参考資料**
 
-- [DSPy公式サイト](https://dspy.ai/) [52]
-- [プロンプトエンジニアリングを終わらせるDSPy](https://zenn.dev/cybernetics/articles/39fb763aca746c) [51]
+- [DSPy 公式サイト](https://dspy.ai/) [52]
+- [プロンプトエンジニアリングを終わらせる DSPy](https://zenn.dev/cybernetics/articles/39fb763aca746c) [51]
 
 ---
 
