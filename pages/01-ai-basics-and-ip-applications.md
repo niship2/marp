@@ -80,6 +80,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 - 2-23. コンテキストエンジニアリングの役割と戦略
 - 2-24. Anthropic のコンテキストエンジニアリング戦略
 - 2-25. Deep Agents の深堀りで理解する AI エージェント
+- 2-26. ハーネスエンジニアリング（Harness Engineering）と知財業務への適用
 
 ---
 
@@ -135,8 +136,9 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 - 5-5. 自動化システムの構築
 - 5-6. 自動化の効果測定
 - 5-7. AI エージェントのクラウドベンダー比較
-- 5-9. Vellum AI LLM リーダーボードの活用
-- 5-10. MCP (Model Context Protocol) と A2A (Agent-to-Agent) プロトコル
+- 5-8. Vellum AI LLM リーダーボードの活用
+- 5-9. MCP (Model Context Protocol) と A2A (Agent-to-Agent) プロトコル
+- 5-10. 2026 年以降の主要トレンドと知財業務への影響
 
 ---
 
