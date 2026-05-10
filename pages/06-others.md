@@ -407,3 +407,73 @@ https://parallel.ai/articles/what-is-an-agent-harness
 
 [72] MongoDB "The Agent Harness: Why the LLM Is the Smallest Part of Your Agent System"
 https://www.mongodb.com/company/blog/technical/agent-harness-why-llm-is-smallest-part-of-your-agent-system
+
+---
+
+### 2026 年 知財 × 生成 AI ニュース関連参考資料
+
+[73] USPTO Revised Inventorship Guidance for AI-Assisted Inventions (2025-11-28)
+https://www.federalregister.gov/documents/2025/11/28/2025-21457/revised-inventorship-guidance-for-ai-assisted-inventions
+
+[74] Holland & Knight "The Final Word? Supreme Court Refuses to Hear Case on AI Authorship and Inventorship"
+https://www.hklaw.com/en/insights/publications/2026/03/the-final-word-supreme-court-refuses-to-hear-case-on-ai-authorship
+
+[75] Venable "The §101 Reset for 2026: New USPTO Guidance on AI Eligibility"
+https://www.venable.com/insights/publications/2025/12/the-101-reset-for-2026
+
+[76] Bartz v. Anthropic 和解報道 (ITmedia)
+https://www.itmedia.co.jp/news/articles/2509/06/news037.html
+
+[77] Anthropic 著作権侵害和解（時事ドットコム）
+https://www.jiji.com/jc/article?k=2025090600264&g=int
+
+---
+
+[78] AI Business "AI Lawsuits in 2026: Settlements, Licensing Deals, Litigation"
+https://aibusiness.com/generative-ai/ai-lawsuits-in-2026-settlements-licensing-deals-litigation
+
+[79] Norton Rose Fulbright "An update on AI copyright cases in 2026"
+https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026
+
+[80] Latham & Watkins "EU AI Act: GPAI Model Obligations in Force and Final GPAI Code of Practice in Place"
+https://www.lw.com/en/insights/eu-ai-act-gpai-model-obligations-in-force-and-final-gpai-code-of-practice-in-place
+
+[81] Kennedys "EU AI Act implementation timeline (2026 deadline)"
+https://www.kennedyslaw.com/en/thought-leadership/article/2026/the-eu-ai-act-implementation-timeline-understanding-the-next-deadline-for-compliance/
+
+[82] GVA法律事務所「2026 年最新 AI 事業者ガイドライン改訂の要点」
+https://gvalaw.jp/blog/i20260303/
+
+---
+
+[83] 日経新聞「生成 AI 用いた知財侵害を抑制 特許庁、企業の開発保護」
+https://www.nikkei.com/article/DGXZQOUA050P20V01C24A1000000/
+
+[84] 共同通信 / Yahoo!ニュース「生成 AI の『知財』侵害を防ぐ 特許庁、26 年に意匠法改正へ」
+https://news.yahoo.co.jp/articles/549fd68cfec75584834175f7f9dcbce5bc6af84e
+
+[85] JPO「AI 関連発明の出願状況調査」
+https://www.jpo.go.jp/system/patent/gaiyo/sesaku/ai/ai_shutsugan_chosa.html
+
+[86] JPO「AI 関連技術に関する特許審査の事例について」
+https://www.jpo.go.jp/system/laws/rule/guideline/patent/ai_jirei.html
+
+[87] Business Insider「NEC が知財 AI 開発で実現した『最大 94% 効率化』」
+https://www.businessinsider.jp/article/2601-nec-ai-intellectual-property-efficiency/
+
+---
+
+[88] Intelacia "Harvey's $11B Valuation"
+https://www.intelacia.com/2026/05/05/harveys-11b-valuation-how-legal-ai-is-reshaping-modern-legal-workflows/
+
+[89] LexisNexis × Harvey 戦略提携
+https://www.lexisnexis.com/community/pressroom/b/news/posts/lexisnexis-and-harvey-announce-strategic-alliance-to-integrate-trusted-high-quality-ai-technology-and-legal-content-and-develop-advanced-workflows
+
+[90] PatSnap "Top 6 IP Patent Search Platforms for 2026"
+https://www.patsnap.com/resources/blog/articles/top-6-ip-patent-search-platforms-for-2026/
+
+[91] Research and Markets / SNS Insider "AI Patent Search Market Report 2026"
+https://www.researchandmarkets.com/reports/6226574/ai-patent-search-market-report
+
+[92] 文化庁「AI と著作権について」
+https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html
