@@ -80,6 +80,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 - 2-23. コンテキストエンジニアリングの役割と戦略
 - 2-24. Anthropic のコンテキストエンジニアリング戦略
 - 2-25. Deep Agents の深堀りで理解する AI エージェント
+- 2-26. ハーネスエンジニアリング（Harness Engineering）と知財業務への適用
 
 ---
 

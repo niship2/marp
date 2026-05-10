@@ -371,3 +371,39 @@ https://huggingface.co/blog
 
 [62] Defensive Publication と AI 生成先行技術に関する議論 (IP Watchdog 等)
 https://ipwatchdog.com/
+
+---
+
+### ハーネスエンジニアリング関連参考資料
+
+[63] Martin Fowler "Harness engineering for coding agent users"
+https://martinfowler.com/articles/harness-engineering.html
+
+[64] Mitchell Hashimoto / Martin Fowler "Harness Engineering - first thoughts"
+https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html
+
+[65] OpenAI "Harness engineering: leveraging Codex in an agent-first world"
+https://openai.com/index/harness-engineering/
+
+[66] LangChain "The Anatomy of an Agent Harness"
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness
+
+[67] awesome-harness-engineering (GitHub)
+https://github.com/ai-boost/awesome-harness-engineering
+
+---
+
+[68] AddyOsmani.com "Agent Harness Engineering"
+https://addyosmani.com/blog/agent-harness-engineering/
+
+[69] HumanLayer "Skill Issue: Harness Engineering for Coding Agents"
+https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents
+
+[70] Firecrawl "What Is an Agent Harness?"
+https://www.firecrawl.dev/blog/what-is-an-agent-harness
+
+[71] Parallel "What is an agent harness in the context of LLMs?"
+https://parallel.ai/articles/what-is-an-agent-harness
+
+[72] MongoDB "The Agent Harness: Why the LLM Is the Smallest Part of Your Agent System"
+https://www.mongodb.com/company/blog/technical/agent-harness-why-llm-is-smallest-part-of-your-agent-system
