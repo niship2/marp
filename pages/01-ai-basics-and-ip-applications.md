@@ -40,6 +40,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 - 1-9. マルチモーダル処理（特許図面・化学構造・配列）
 - 1-10. 特許翻訳の評価とポストエディット
 - 1-11. 失敗事例・アンチパターン集
+- 1-12. 2026 年の主要モデル・ツールアップデートと知財業務での活用
 
 ---
 
@@ -1027,3 +1028,276 @@ LLM への指示例:
 - 出力に「予備的見解であり、最終判断は弁理士が行います」を **自動付記**
 
 ---
+
+## 1-12. 2026 年の主要モデル・ツールアップデートと知財業務での活用
+
+#### この節で扱うこと
+
+2026 年に Anthropic / OpenAI / Google が **モデル**と **エージェントツール群**を集中投入。
+本節では、2026 年 5 月時点の最新ラインナップと **知財業務での具体的な使い所**を整理します。
+
+#### 3 社比較サマリ（2026 年 5 月時点）
+
+| 観点               | Anthropic                  | OpenAI                       | Google                                |
+| ------------------ | -------------------------- | ---------------------------- | ------------------------------------- |
+| フラッグシップ     | **Claude Opus 4.7**        | **GPT-5.5 / GPT-5.5 Pro**   | **Gemini 3.1 Pro**                    |
+| 高速・低コスト     | Claude Haiku 4.5           | GPT-5.5 Instant              | Gemini 3 Flash / 3.1 Flash-Lite       |
+| Computer Use       | Claude Computer Use Agent  | ChatGPT Atlas Agent Mode    | Project Mariner                       |
+| Agent SDK          | Claude Agent SDK           | AgentKit / Agent Builder     | ADK v1.0 (4 言語安定版)               |
+| エンタープライズ   | Skills / Multiagent Beta   | Workspace Agents             | Gemini Enterprise Agent Platform     |
+| マルチモーダル     | 画像 3.75MP（Opus 4.7）    | GPT-5.5 ビジョン             | Project Astra（映像・画面・記憶）    |
+
+---
+
+## 1-12. Anthropic Claude（1）2026 年のモデル系譜
+
+#### モデルリリース
+
+| 日付         | モデル                      | 主な特徴                                           |
+| ------------ | --------------------------- | -------------------------------------------------- |
+| 2025-10      | Claude Haiku 4.5            | 軽量・高速・低コスト                               |
+| 2026-02-05   | **Claude Opus 4.6**         | エージェントチーム機能、Claude in PowerPoint       |
+| 2026-02-17   | **Claude Sonnet 4.6**       | 初めて Sonnet が前世代 Opus をコーディングで超え   |
+| 2026-04-16   | **Claude Opus 4.7**         | 画像 3.75MP、自己検証、Task Budgets、サイバー検知  |
+
+#### Opus 4.7 のベンチマーク（参考）
+
+- **SWE-bench Verified: 87.6%**（4.6 から +6.8 ポイント、Gemini 3.1 Pro 80.6% を上回る）
+- **SWE-bench Pro: 64.3%**（4.6 から +10.9 ポイント）
+- **GPQA Diamond: 94.2%**、Terminal-Bench 2.0: 69.4%
+- **Finance Agent: 64.4%**（SOTA）
+- **MCP-Atlas（ツール呼び出し）**: GPT-5.4 を 9.2 ポイント上回る
+
+**Task Budgets**: エージェントループに **トークン上限**を渡せ、モデルが残予算を見ながら優先順位付けして終了する新機能。
+
+---
+
+## 1-12. Anthropic Claude（2）周辺ツール
+
+#### 2026 年に発表された主要ツール
+
+```
+■ Claude Computer Use Agent（2026-03-23 リサーチプレビュー）
+   - デスクトップを直接操作（クリック・入力・アプリ起動）
+   - Pro/Max ユーザに Claude Cowork / Claude Code 経由で提供
+   - 自律的なマルチステップワークフロー実行
+
+■ Claude Agent SDK（2026-03 改名）
+   - 旧 "Claude Code SDK" をリネーム
+   - Claude Code が使うのと同じ harness をライブラリ化
+   - 外部開発者が任意のエージェントを構築可能に
+
+■ Agent Skills
+   - 指示・スクリプト・リソースをフォルダ単位でパッケージ化
+   - "skill-as-folder" の設計、複数エージェントで再利用
+
+■ Multiagent Sessions / Outcomes（パブリックベータ）
+   - managed-agents-2026-04-01 ベータヘッダで利用可能
+   - エージェント間連携と結果集約を Claude プラットフォーム側で管理
+```
+
+---
+
+## 1-12. Anthropic Claude（3）知財業務での活用
+
+| 用途                                       | 推奨モデル / ツール                | 理由                                       |
+| ------------------------------------------ | ---------------------------------- | ------------------------------------------ |
+| **明細書ドラフト・OA 応答案**             | Claude Opus 4.7                    | 長文の論理一貫性、自己検証                 |
+| **クレーム生成・補正案**                  | Opus 4.7（高 effort）              | 形式厳密、SWE-bench で示される構造把握     |
+| **特許図面の符号抽出・図面理解**          | Opus 4.7（3.75MP 画像）            | 高解像度図面を直接解析                     |
+| **大量文献の一次スクリーニング**          | Sonnet 4.6 / Haiku 4.5             | コスト効率                                 |
+| **J-PlatPat / Espacenet 自動操作**        | Computer Use Agent                 | ブラウザを直接操作、ログイン後画面も対応   |
+| **事務所固有のハウススタイル適用**        | Agent Skills                       | プロジェクト規約をフォルダで配布           |
+| **複数案件の並列処理**                    | Multiagent Sessions                | 案件 ID ごとのエージェントを同時実行       |
+| **コスト管理が厳しい運用**                | Task Budgets                       | 案件単価を確実にキャップ                   |
+
+---
+
+## 1-12. OpenAI（1）2026 年のモデル系譜
+
+#### モデルリリース
+
+| 日付         | モデル                       | 主な特徴                                           |
+| ------------ | ---------------------------- | -------------------------------------------------- |
+| 2026-04-23   | **GPT-5.5 / GPT-5.5 Pro**   | エージェント・コーディング・コンピュータ操作特化  |
+| 2026-04-23   | GPT-5.5 Thinking             | 長時間推論モード                                  |
+| 2026-05-05   | **GPT-5.5 Instant**          | ChatGPT デフォルトモデル化                        |
+| 2026-05-07   | GPT-5.5-Cyber                | サイバーセキュリティ専門用（限定提供）            |
+
+#### GPT-5.5 のベンチマーク（参考）
+
+- **SWE-bench: 88.7%**、**MMLU: 92.4%**
+- **Terminal-Bench 2.0: 82.7%**（コマンドライン自動化で SOTA）
+- **OSWorld-Verified**（コンピュータ操作）で SOTA
+- **FrontierMath（1-3 / 4）: 51.7% / 35.4%**
+- **ハルシネーション**: GPT-5.4 比で **60% 削減**
+- **API コンテキスト 1M トークン**、Codex 内 400K
+- **トークン効率**: GPT-5.4 より少ないトークンでより良い結果（Codex）
+
+---
+
+## 1-12. OpenAI（2）周辺ツール
+
+```
+■ ChatGPT Atlas（2026 公開、macOS から順次拡大）
+   - ChatGPT を組み込んだウェブブラウザ
+   - Free/Plus/Pro/Go で macOS 全世界提供
+   - Windows / iOS / Android 順次対応
+   - Plus/Pro/Business で "Agent Mode" がプレビュー
+
+■ ChatGPT Agent（仮想ブラウザ統合）
+   - 旧 Operator の機能を ChatGPT Agent に統合
+   - 単独 operator.chatgpt.com は廃止予定
+
+■ AgentKit / Agent Builder（2025-10 発表、2026 普及）
+   - ビジュアル・ドラッグ＆ドロップでエージェント構築
+   - Connector Registry / ChatKit を含むスイート
+   - エンタープライズ向けに大幅機能拡張
+
+■ Workspace Agents（2026 発表）
+   - Custom GPTs の後継（エンタープライズ向け）
+   - Slack / Salesforce / 各種コネクタに直結
+   - Enterprise Key Management（EKM）対応
+```
+
+---
+
+## 1-12. OpenAI（3）知財業務での活用
+
+| 用途                                       | 推奨モデル / ツール                | 理由                                          |
+| ------------------------------------------ | ---------------------------------- | --------------------------------------------- |
+| **OA 拒絶理由の論理分析**                 | GPT-5.5 Pro（Thinking）           | 長時間推論、ハルシネーション 60% 削減        |
+| **大規模明細書（1M トークン）の通読**     | GPT-5.5 API                        | 1M コンテキスト                              |
+| **数値・実施例・データ表の解析**          | GPT-5.5（Code Interpreter 併用）   | Code 実行で数値検証                          |
+| **特許庁ポータルの自動操作**              | ChatGPT Atlas Agent Mode           | ブラウザネイティブ、ログイン後操作可能       |
+| **社内ナレッジ統合エージェント**          | Workspace Agents                   | Slack / Salesforce / SharePoint 連携          |
+| **ノーコード自動化フロー**                | Agent Builder                      | パラリーガル / 弁理士が直接設計可能          |
+| **大量出願ファミリーの調査**              | ChatGPT Agent + 仮想ブラウザ       | 複数特許庁を横断巡回                         |
+| **コーディングが伴う調査スクリプト**      | GPT-5.5 + Codex                    | 特許 API ラッパ、データ加工                  |
+
+---
+
+## 1-12. Google Gemini（1）2026 年のモデル系譜
+
+#### モデルリリース
+
+| 日付         | モデル                       | 主な特徴                                              |
+| ------------ | ---------------------------- | ----------------------------------------------------- |
+| 2026 初頭    | **Gemini 3 Flash**           | Gemini アプリの新デフォルト                           |
+| 2026 初頭    | Gemini 3 Pro                 | 高度な数学・コーディング向け                          |
+| 2026-04      | **Gemini 3.1 Pro**           | **ARC-AGI-2 で 77.1%**、複雑なエージェント向け最適化  |
+| 2026-04      | Gemini 3.1 Flash-Lite GA     | 超低レイテンシ・最高コスト効率                        |
+| 2026-05-05   | Gemini 3.2 Flash             | iOS Gemini と AI Studio に静かに登場（未公式）        |
+
+#### Gemini 3.1 Pro のポイント
+
+- **ARC-AGI-2: 77.1%** — 抽象推論で他社をリード
+- 複雑な **マルチステップエージェント**ワークフローに最適化
+- **マルチモーダル**: 動画・音声・画像・コードを統合理解
+- 長大コンテキスト（公開情報では数百万トークン級）
+
+---
+
+## 1-12. Google Gemini（2）周辺ツール
+
+```
+■ Project Mariner（更新版、2026 一般提供拡大）
+   - ウェブブラウジング・エージェント
+   - WebVoyager ベンチマーク 83.5%
+   - クラウド VM 上で 10 タスク同時並行実行可能
+   - Computer use 機能を Gemini API に統合
+
+■ Project Astra（2026 通年でアプリ統合）
+   - 動画理解・画面共有・長期記憶
+   - Gemini アプリへの完全統合が 2026 中の目標
+   - スマホカメラを通じた "見ながら相談" ユースケース
+
+■ Agent Development Kit (ADK) v1.0（Cloud Next 2026）
+   - Python / Java / Go / Node.js の 4 言語で安定版
+   - エージェント構築の Google 公式フレームワーク
+
+■ Gemini Enterprise Agent Platform（旧 Vertex AI、Cloud Next 2026 で改称）
+   - エンタープライズ AI 提供の包括的再構築
+   - A2A プロトコル / Workspace Studio
+   - OpenAI / Anthropic への "フルスタック対抗"
+```
+
+---
+
+## 1-12. Google Gemini（3）知財業務での活用
+
+| 用途                                          | 推奨モデル / ツール                   | 理由                                          |
+| --------------------------------------------- | ------------------------------------- | --------------------------------------------- |
+| **大量特許のセマンティック検索・要約**       | Gemini 3.1 Flash-Lite                 | 圧倒的な低コスト・低レイテンシ                |
+| **複雑な抽象推論（進歩性予備分析）**         | Gemini 3.1 Pro                        | ARC-AGI-2 でのリード                         |
+| **動画・図面・写真の統合解析**               | Gemini 3.1 Pro + Project Astra        | 映像 + 音声 + 画面の統合理解                 |
+| **発明者ヒアリングの支援（Astra 経由）**     | Astra in Gemini app                   | ライブで発明者の説明を聞きながら整理         |
+| **特許 DB の自動巡回（10 並行）**            | Project Mariner                       | 同時 10 タスクで複数 DB を横断               |
+| **エージェント開発（Java / Go の社内系）**   | ADK v1.0                              | Java/Go で書かれた知財管理システムへの組込  |
+| **Workspace 上の知財ドキュメント自動化**     | Gemini Enterprise + Workspace        | Docs / Sheets / Drive のネイティブ統合        |
+| **Vertex AI 既存利用組織のスケール拡張**     | Gemini Enterprise Agent Platform      | A2A 対応、既存資産を活かした拡張             |
+
+---
+
+## 1-12. 3 社の使い分け（知財業務観点）
+
+#### タスク × プロバイダのマッピング
+
+```
+■ 守秘・規制重視（出願前案件）
+   1) オンプレ LLM（Llama 4 / Qwen / Sakana / NTT tsuzumi）
+   2) Anthropic（学習利用オプトアウト + エンタープライズ）
+   3) Azure OpenAI（PrivateLink + EKM）
+   4) Google Gemini Enterprise（VPC SC + CMEK）
+
+■ 推論・論理重視（OA 応答・無効資料分析）
+   1) Claude Opus 4.7（自己検証）
+   2) GPT-5.5 Pro Thinking（長時間推論）
+   3) Gemini 3.1 Pro（抽象推論）
+
+■ 大量処理・コスト重視（先行技術一次スクリーニング）
+   1) Gemini 3.1 Flash-Lite（コスト最強）
+   2) Claude Haiku 4.5
+   3) GPT-5.5 Instant
+
+■ ブラウザ自動操作（J-PlatPat / Espacenet / USPTO PAIR）
+   1) ChatGPT Atlas Agent Mode（ブラウザネイティブ）
+   2) Project Mariner（10 並行）
+   3) Claude Computer Use Agent
+
+■ Workspace / 既存社内システム統合
+   1) Gemini Enterprise + Google Workspace
+   2) OpenAI Workspace Agents（Slack / Salesforce）
+   3) Claude + MCP（自前統合）
+```
+
+---
+
+## 1-12. 重要な留意点
+
+#### モデル選定のうえでの実務上の注意
+
+```
+1. "モデル名" よりも "ハーネス + ゴールデンセット" が競争力
+   - モデルは半年ごとに入れ替わる
+   - 自社のゴールデンセットで定期的に再評価する仕組みを作る
+
+2. ベンチマーク値は「指標としての参考」
+   - 公開ベンチは上振れしがち（学習データ汚染を含む）
+   - 自社タスクでの実測が最終判定
+
+3. データ取扱いポリシーは「モデル単位 + テナント単位」で確認
+   - 同じモデルでも、API / Bedrock / Vertex / Azure で条項が異なる
+   - 学習利用オプトアウトの "明示的な署名" が肝要
+
+4. Computer Use 系は規約遵守が最優先
+   - 各特許庁の robots / 利用規約を必ず確認
+   - レート制限・セッション管理は事務所側で実装
+
+5. エージェント系は「Outcomes」をログ化
+   - Claude の Outcomes / OpenAI の trace / Gemini の trace
+   - すべて監査ログとして保存（USPTO・EU AI Act 対応）
+```
+
+参考: Anthropic Release Notes [103]、OpenAI Release Notes [104]、
+Gemini Release Notes [105]、各社モデルカード / プライシング

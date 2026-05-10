@@ -513,3 +513,62 @@ https://www.helicone.ai/
 
 [102] Microsoft Prompt flow (Evals 統合)
 https://github.com/microsoft/promptflow
+
+---
+
+### 2026 年 主要モデル・ツールアップデート 参考資料
+
+[103] Anthropic Release Notes
+https://platform.claude.com/docs/en/release-notes/overview
+
+[104] OpenAI Release Notes
+https://help.openai.com/en/articles/12591856-chatgpt-atlas-release-notes
+
+[105] Gemini Apps Release Notes
+https://gemini.google/release-notes/
+
+[106] Anthropic "Introducing Claude Opus 4.7"
+https://www.anthropic.com/news/claude-opus-4-7
+
+[107] Vellum "Claude Opus 4.7 Benchmarks Explained"
+https://www.vellum.ai/blog/claude-opus-4-7-benchmarks-explained
+
+---
+
+[108] OpenAI "Introducing GPT-5.5"
+https://openai.com/index/introducing-gpt-5-5/
+
+[109] OpenAI "Introducing ChatGPT Atlas"
+https://openai.com/index/introducing-chatgpt-atlas/
+
+[110] OpenAI "Introducing ChatGPT Agent: bridging research and action"
+https://openai.com/index/introducing-chatgpt-agent/
+
+[111] Google "Gemini 3.1 Pro: A smarter model for your most complex tasks"
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/
+
+[112] Google "Introducing Gemini 3 Flash"
+https://blog.google/products/gemini/gemini-3-flash/
+
+---
+
+[113] Google Cloud "Gemini 3.1 Flash-Lite is now generally available"
+https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available
+
+[114] Google DeepMind "Project Mariner"
+https://deepmind.google/models/project-mariner/
+
+[115] The Next Web "Google Cloud Next 2026: AI agents, A2A, Workspace Studio"
+https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era
+
+[116] Anthropic "Claude Computer Use Agent"
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool
+
+[117] Anthropic Agent Skills (Docs)
+https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
+
+[118] Simon Willison "Live blog: Code w/ Claude 2026"
+https://simonwillison.net/2026/May/6/code-w-claude-2026/
+
+[119] VentureBeat "OpenAI unveils Workspace Agents"
+https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more
