@@ -407,3 +407,221 @@ https://parallel.ai/articles/what-is-an-agent-harness
 
 [72] MongoDB "The Agent Harness: Why the LLM Is the Smallest Part of Your Agent System"
 https://www.mongodb.com/company/blog/technical/agent-harness-why-llm-is-smallest-part-of-your-agent-system
+
+---
+
+### 2026 年 知財 × 生成 AI ニュース関連参考資料
+
+[73] USPTO Revised Inventorship Guidance for AI-Assisted Inventions (2025-11-28)
+https://www.federalregister.gov/documents/2025/11/28/2025-21457/revised-inventorship-guidance-for-ai-assisted-inventions
+
+[74] Holland & Knight "The Final Word? Supreme Court Refuses to Hear Case on AI Authorship and Inventorship"
+https://www.hklaw.com/en/insights/publications/2026/03/the-final-word-supreme-court-refuses-to-hear-case-on-ai-authorship
+
+[75] Venable "The §101 Reset for 2026: New USPTO Guidance on AI Eligibility"
+https://www.venable.com/insights/publications/2025/12/the-101-reset-for-2026
+
+[76] Bartz v. Anthropic 和解報道 (ITmedia)
+https://www.itmedia.co.jp/news/articles/2509/06/news037.html
+
+[77] Anthropic 著作権侵害和解（時事ドットコム）
+https://www.jiji.com/jc/article?k=2025090600264&g=int
+
+---
+
+[78] AI Business "AI Lawsuits in 2026: Settlements, Licensing Deals, Litigation"
+https://aibusiness.com/generative-ai/ai-lawsuits-in-2026-settlements-licensing-deals-litigation
+
+[79] Norton Rose Fulbright "An update on AI copyright cases in 2026"
+https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026
+
+[80] Latham & Watkins "EU AI Act: GPAI Model Obligations in Force and Final GPAI Code of Practice in Place"
+https://www.lw.com/en/insights/eu-ai-act-gpai-model-obligations-in-force-and-final-gpai-code-of-practice-in-place
+
+[81] Kennedys "EU AI Act implementation timeline (2026 deadline)"
+https://www.kennedyslaw.com/en/thought-leadership/article/2026/the-eu-ai-act-implementation-timeline-understanding-the-next-deadline-for-compliance/
+
+[82] GVA法律事務所「2026 年最新 AI 事業者ガイドライン改訂の要点」
+https://gvalaw.jp/blog/i20260303/
+
+---
+
+[83] 日経新聞「生成 AI 用いた知財侵害を抑制 特許庁、企業の開発保護」
+https://www.nikkei.com/article/DGXZQOUA050P20V01C24A1000000/
+
+[84] 共同通信 / Yahoo!ニュース「生成 AI の『知財』侵害を防ぐ 特許庁、26 年に意匠法改正へ」
+https://news.yahoo.co.jp/articles/549fd68cfec75584834175f7f9dcbce5bc6af84e
+
+[85] JPO「AI 関連発明の出願状況調査」
+https://www.jpo.go.jp/system/patent/gaiyo/sesaku/ai/ai_shutsugan_chosa.html
+
+[86] JPO「AI 関連技術に関する特許審査の事例について」
+https://www.jpo.go.jp/system/laws/rule/guideline/patent/ai_jirei.html
+
+[87] Business Insider「NEC が知財 AI 開発で実現した『最大 94% 効率化』」
+https://www.businessinsider.jp/article/2601-nec-ai-intellectual-property-efficiency/
+
+---
+
+[88] Intelacia "Harvey's $11B Valuation"
+https://www.intelacia.com/2026/05/05/harveys-11b-valuation-how-legal-ai-is-reshaping-modern-legal-workflows/
+
+[89] LexisNexis × Harvey 戦略提携
+https://www.lexisnexis.com/community/pressroom/b/news/posts/lexisnexis-and-harvey-announce-strategic-alliance-to-integrate-trusted-high-quality-ai-technology-and-legal-content-and-develop-advanced-workflows
+
+[90] PatSnap "Top 6 IP Patent Search Platforms for 2026"
+https://www.patsnap.com/resources/blog/articles/top-6-ip-patent-search-platforms-for-2026/
+
+[91] Research and Markets / SNS Insider "AI Patent Search Market Report 2026"
+https://www.researchandmarkets.com/reports/6226574/ai-patent-search-market-report
+
+[92] 文化庁「AI と著作権について」
+https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html
+
+---
+
+### Evals・運用・セキュリティ関連参考資料
+
+[93] OpenAI Evals (GitHub)
+https://github.com/openai/evals
+
+[94] Langfuse (LLM 観測 + 評価 OSS)
+https://langfuse.com/
+
+[95] LangSmith Evaluation
+https://docs.smith.langchain.com/evaluation
+
+[96] Arize Phoenix (OSS 観測・評価)
+https://phoenix.arize.com/
+
+[97] Braintrust
+https://www.braintrust.dev/
+
+[98] DeepEval (pytest 互換 LLM 評価)
+https://github.com/confident-ai/deepeval
+
+[99] NIST AI Risk Management Framework
+https://www.nist.gov/itl/ai-risk-management-framework
+
+---
+
+[100] OWASP Top 10 for LLM Applications
+https://owasp.org/www-project-top-10-for-large-language-model-applications/
+
+[101] Helicone (LLM コスト・観測)
+https://www.helicone.ai/
+
+[102] Microsoft Prompt flow (Evals 統合)
+https://github.com/microsoft/promptflow
+
+---
+
+### 2026 年 主要モデル・ツールアップデート 参考資料
+
+[103] Anthropic Release Notes
+https://platform.claude.com/docs/en/release-notes/overview
+
+[104] OpenAI Release Notes
+https://help.openai.com/en/articles/12591856-chatgpt-atlas-release-notes
+
+[105] Gemini Apps Release Notes
+https://gemini.google/release-notes/
+
+[106] Anthropic "Introducing Claude Opus 4.7"
+https://www.anthropic.com/news/claude-opus-4-7
+
+[107] Vellum "Claude Opus 4.7 Benchmarks Explained"
+https://www.vellum.ai/blog/claude-opus-4-7-benchmarks-explained
+
+---
+
+[108] OpenAI "Introducing GPT-5.5"
+https://openai.com/index/introducing-gpt-5-5/
+
+[109] OpenAI "Introducing ChatGPT Atlas"
+https://openai.com/index/introducing-chatgpt-atlas/
+
+[110] OpenAI "Introducing ChatGPT Agent: bridging research and action"
+https://openai.com/index/introducing-chatgpt-agent/
+
+[111] Google "Gemini 3.1 Pro: A smarter model for your most complex tasks"
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/
+
+[112] Google "Introducing Gemini 3 Flash"
+https://blog.google/products/gemini/gemini-3-flash/
+
+---
+
+[113] Google Cloud "Gemini 3.1 Flash-Lite is now generally available"
+https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available
+
+[114] Google DeepMind "Project Mariner"
+https://deepmind.google/models/project-mariner/
+
+[115] The Next Web "Google Cloud Next 2026: AI agents, A2A, Workspace Studio"
+https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era
+
+[116] Anthropic "Claude Computer Use Agent"
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool
+
+[117] Anthropic Agent Skills (Docs)
+https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
+
+[118] Simon Willison "Live blog: Code w/ Claude 2026"
+https://simonwillison.net/2026/May/6/code-w-claude-2026/
+
+[119] VentureBeat "OpenAI unveils Workspace Agents"
+https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more
+
+---
+
+### 日本企業の知財 × AI / 生成 AI サービス 参考資料
+
+[120] 島津製作所「Genzo AI 設立リリース」
+https://www.shimadzu.co.jp/news/2026/acmnk57uqb3579ay.html
+
+[121] Genzo AI 公式
+https://www.genzo-ai.co.jp/
+
+[122] Tokkyo.Ai 公式（リーガルテック株式会社）
+https://www.tokkyo.ai/
+
+[123] AI Samurai 公式
+https://aisamurai.co.jp/
+
+[124] Patentfield 公式
+https://en.patentfield.com/
+
+[125] サマライア（Summaria）
+https://patent-i.com/summaria/
+
+---
+
+[126] ユアサポAI 公式
+https://yoursup.co.jp/
+
+[127] アッピアエンジン（appia-engine） / Smart-IP
+https://yorozuipsc.com/uploads/1/3/2/5/132566344/19bc4f1da0c0e2e3d76c.pdf
+
+[128] Toreru Media「生成 AI は知財業務にどんな影響を与えるのか？」
+https://toreru.jp/media/trademark/7924/
+
+[129] IP Force 知財ポータル
+https://ipforce.jp/
+
+[130] Biz/Zine「京セラ・島津製作所・旭化成の知財責任者が語る AI エージェント時代」
+https://bizzine.jp/article/detail/11579?p=2
+
+[131] 日経新聞「島津製作所、知財業務を AI で効率化 新会社でサービス外販」
+https://www.nikkei.com/article/DGXZQOUF251520V20C26A3000000/
+
+[132] MONOist「年間 8000 万円のコストを削減した知財業務自動化 AI を外販」
+https://monoist.itmedia.co.jp/mn/articles/2604/02/news040.html
+
+---
+
+[133] パナソニック × 富士通 × 三菱電機 AI 検索共同開発
+https://pr.fujitsu.com/jp/news/2019/11/1.html
+
+[134] AI 特許文書作成支援サービス比較レポート (yorozuipsc)
+https://yorozuipsc.com/uploads/1/3/2/5/132566344/6d203dddf3e173d61aa8.pdf
