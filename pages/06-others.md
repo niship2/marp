@@ -338,3 +338,36 @@ https://www.langflow.org/
 
 [53]Effective context engineering for AI agents
 https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+
+---
+
+### 2026 年以降のトレンド関連参考資料
+
+[54] EU AI Act (EUR-Lex 公式テキスト)
+https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+
+[55] USPTO Inventorship Guidance for AI-Assisted Inventions
+https://www.uspto.gov/initiatives/artificial-intelligence
+
+[56] 文化庁 AI と著作権に関する考え方について
+https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html
+
+[57] 内閣府 AI 戦略・AI 推進法関連資料
+https://www8.cao.go.jp/cstp/ai/
+
+---
+
+[58] Anthropic Computer Use (developer docs)
+https://docs.anthropic.com/en/docs/build-with-claude/computer-use
+
+[59] OpenAI Operator / Computer-using agents
+https://openai.com/index/introducing-operator/
+
+[60] DABUS 判例の各国比較（WIPO Magazine 等）
+https://www.wipo.int/wipo_magazine/en/
+
+[61] Sovereign AI / オープンウェイトモデル動向 (Hugging Face)
+https://huggingface.co/blog
+
+[62] Defensive Publication と AI 生成先行技術に関する議論 (IP Watchdog 等)
+https://ipwatchdog.com/
