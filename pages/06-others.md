@@ -572,3 +572,56 @@ https://simonwillison.net/2026/May/6/code-w-claude-2026/
 
 [119] VentureBeat "OpenAI unveils Workspace Agents"
 https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more
+
+---
+
+### 日本企業の知財 × AI / 生成 AI サービス 参考資料
+
+[120] 島津製作所「Genzo AI 設立リリース」
+https://www.shimadzu.co.jp/news/2026/acmnk57uqb3579ay.html
+
+[121] Genzo AI 公式
+https://www.genzo-ai.co.jp/
+
+[122] Tokkyo.Ai 公式（リーガルテック株式会社）
+https://www.tokkyo.ai/
+
+[123] AI Samurai 公式
+https://aisamurai.co.jp/
+
+[124] Patentfield 公式
+https://en.patentfield.com/
+
+[125] サマライア（Summaria）
+https://patent-i.com/summaria/
+
+---
+
+[126] ユアサポAI 公式
+https://yoursup.co.jp/
+
+[127] アッピアエンジン（appia-engine） / Smart-IP
+https://yorozuipsc.com/uploads/1/3/2/5/132566344/19bc4f1da0c0e2e3d76c.pdf
+
+[128] Toreru Media「生成 AI は知財業務にどんな影響を与えるのか？」
+https://toreru.jp/media/trademark/7924/
+
+[129] IP Force 知財ポータル
+https://ipforce.jp/
+
+[130] Biz/Zine「京セラ・島津製作所・旭化成の知財責任者が語る AI エージェント時代」
+https://bizzine.jp/article/detail/11579?p=2
+
+[131] 日経新聞「島津製作所、知財業務を AI で効率化 新会社でサービス外販」
+https://www.nikkei.com/article/DGXZQOUF251520V20C26A3000000/
+
+[132] MONOist「年間 8000 万円のコストを削減した知財業務自動化 AI を外販」
+https://monoist.itmedia.co.jp/mn/articles/2604/02/news040.html
+
+---
+
+[133] パナソニック × 富士通 × 三菱電機 AI 検索共同開発
+https://pr.fujitsu.com/jp/news/2019/11/1.html
+
+[134] AI 特許文書作成支援サービス比較レポート (yorozuipsc)
+https://yorozuipsc.com/uploads/1/3/2/5/132566344/6d203dddf3e173d61aa8.pdf

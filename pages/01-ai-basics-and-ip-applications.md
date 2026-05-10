@@ -149,6 +149,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 - 5-9. MCP (Model Context Protocol) と A2A (Agent-to-Agent) プロトコル
 - 5-10. 2026 年以降の主要トレンドと知財業務への影響
 - 5-11. 2026 年の知財 × 生成 AI 主要ニュース
+- 5-12. 日本企業の知財 × AI / 生成 AI サービス・マップ
 
 ---
 
