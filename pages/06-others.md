@@ -477,3 +477,39 @@ https://www.researchandmarkets.com/reports/6226574/ai-patent-search-market-repor
 
 [92] 文化庁「AI と著作権について」
 https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html
+
+---
+
+### Evals・運用・セキュリティ関連参考資料
+
+[93] OpenAI Evals (GitHub)
+https://github.com/openai/evals
+
+[94] Langfuse (LLM 観測 + 評価 OSS)
+https://langfuse.com/
+
+[95] LangSmith Evaluation
+https://docs.smith.langchain.com/evaluation
+
+[96] Arize Phoenix (OSS 観測・評価)
+https://phoenix.arize.com/
+
+[97] Braintrust
+https://www.braintrust.dev/
+
+[98] DeepEval (pytest 互換 LLM 評価)
+https://github.com/confident-ai/deepeval
+
+[99] NIST AI Risk Management Framework
+https://www.nist.gov/itl/ai-risk-management-framework
+
+---
+
+[100] OWASP Top 10 for LLM Applications
+https://owasp.org/www-project-top-10-for-large-language-model-applications/
+
+[101] Helicone (LLM コスト・観測)
+https://www.helicone.ai/
+
+[102] Microsoft Prompt flow (Evals 統合)
+https://github.com/microsoft/promptflow
